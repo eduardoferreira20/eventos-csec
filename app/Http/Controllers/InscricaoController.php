@@ -42,15 +42,16 @@ class InscricaoController extends Controller
 		}elseif($request['info'] == 'inscrever'){
 
 			$nameFile = null;
+			
 			//pega o id do ususario logado
-			$user = uniqid(Auth::user()->id);
+			$user = Auth::user()->id;
 
 
     		// Verifica se informou o arquivo e se é válido
-			if ($request->hasFile('comprovante') && $request->file('comprovante')->isValid()) {
+			if($request->hasFile('comprovante') && $request->file('comprovante')->isValid()){
 
         		// Define o nome do arquivo como o id do usuario que envio o comprovante
-				$name =  Auth::user()->id;
+				$name = Auth::user()->id;
 
         		// Recupera a extensão do arquivo
 				$extension = $request->comprovante->extension();
@@ -63,12 +64,13 @@ class InscricaoController extends Controller
         		// Se tiver funcionado o arquivo foi armazenado em storage/app/public/comporvantes/nomedinamicoarquivo.extensao
 
         		// Verifica se NÃO deu certo o upload (Redireciona de volta)
-				if ( !$upload )
+				if (!$upload )
 					return redirect()
 				->back()
 				->with('error', 'Falha ao fazer upload')
 				->withInput();
 			}
+
 			//pega o id do ususario logado
 			$user = Auth::user()->id;
 

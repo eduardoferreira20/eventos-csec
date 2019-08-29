@@ -182,9 +182,9 @@
 				Site: www.csec.poli.br<br>
 				<br>	
 
-				<div id="credit-link">
+				<!-- <div id="credit-link">
 					Powered by <a href="http://wordpress.org" title="WordPress">WordPress</a> and <a href="http://themezee.com/themes/smartline/" title="Smartline WordPress Theme">Smartline</a>.	
-				</div>
+				</div> -->
 			</div>
 		</footer>
 	</div>
