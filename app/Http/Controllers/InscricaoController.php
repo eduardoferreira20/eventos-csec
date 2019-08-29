@@ -55,14 +55,20 @@ class InscricaoController extends Controller
 
         		// Recupera a extensão do arquivo
 				$extension = $request->comprovante->extension();
-
+				$n1 = "jpg";
+				$n2 = "JPG";
+				$n3 = "Jpg";
+				
         		// Define finalmente o nome
 				$nameFile = "{$name}.{$extension}";
 
+				if(strcmp($extension, $n1) || strcmp($extension, $n2) || strcmp($extension, $n3)){
+					return back();
+				}else{
         		// Faz o upload:
 				$upload = $request->comprovante->storeAs('comprovantes', $nameFile);
         		// Se tiver funcionado o arquivo foi armazenado em storage/app/public/comporvantes/nomedinamicoarquivo.extensao
-
+				}
         		// Verifica se NÃO deu certo o upload (Redireciona de volta)
 				if (!$upload )
 					return redirect()
@@ -101,9 +107,9 @@ class InscricaoController extends Controller
 
 	public function baixando($namefile){
 
-		$pathFile = storage_path('app/public/comporvantes/'.$namefile);
+		$pathFile = storage_path('app/public/comprovantes/'.$namefile);
 
-		return response()->download($pathFile);		
+		return response()->download($pathFile,$namefile);		
 	}
 	
 	public function deletar(){

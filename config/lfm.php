@@ -119,6 +119,8 @@ return [
     'valid_file_mimetypes' => [
         'image/jpeg',
         'image/pjpeg',
+        'image/jpg',
+        'image/JPG',
         'image/png',
         'image/gif',
         'image/svg+xml',
@@ -183,7 +185,7 @@ return [
     | directives are not supported.
     */
     'php_ini_overrides' => [
-        'memory_limit'        => '20M',
+        'memory_limit'        => '256M',
     ],
 
 ];
