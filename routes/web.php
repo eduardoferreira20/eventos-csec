@@ -47,6 +47,8 @@ Route::get('send/user/{id}/evento/{user_id}', 'SendEmailUserController@QR')->nam
 
 Route::get('qrcode/{id}/{user_id}','QRController@qrcode')->name('qr');
 
+Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+
 Auth::routes();
 
 Auth::routes(['verify' => true]);

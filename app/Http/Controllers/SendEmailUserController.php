@@ -18,6 +18,35 @@ use View;
 class SendEmailUserController extends Controller
 {
 
+	public function sendAll($id,$user_id){
+
+		$user=Inscricao::where('user_id',$user_id)->all();
+		$evento=Event::where('id',$id)->first();
+
+		$to_name = $user->user->name;
+		$to_email = $user->user->email;
+
+		$evento_id = $evento->id;
+		$user_id = $user->user->id;
+		$evento_name = $evento->title;
+		$user_name = $user->user->name;
+		$evento_data = $evento->start_date;
+		$id = $user->id;
+
+		$data = array('name'=>$user_name, 'title'=>$evento_name,'id'=>$id,'user_id'=>$user_id,'evento_id'=>$evento_id,'data'=>$evento_data,'email'=>$to_email,"body" => "Certificado do evento");
+
+		$user->update(['envio' => '1']);
+
+		Mail::send('mail',$data, function($message) use ($to_name, $to_email,$evento_name) {
+			$message->to($to_email, $to_name)
+			->subject($evento_name);
+			$message->from('dex@poli.br','CSEC');
+		});
+
+
+		return back();
+
+	}
 
 	public function send($id,$user_id){
 
