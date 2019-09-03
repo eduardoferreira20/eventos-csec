@@ -43,7 +43,6 @@ class SendEmailUserController extends Controller
 			$message->from('dex@poli.br','CSEC');
 		});
 
-
 		return back();
 
 	}
