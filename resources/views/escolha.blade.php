@@ -20,9 +20,9 @@ Escolha uma forma de pagamento
 		  Boleto
 		<br>
 		<br>
-		{!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'GET')) !!}
+		{!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
 		{!! Form::hidden('info', 'mostrar_inscricao') !!}
-		{!! Form::submit('Boleto', ['class'=>'btn btn-info']) !!}
+		{!! Form::submit('Boleto', ['class'=>'btn btn-primary']) !!}
 		{!! Form::close() !!}
 	</div>
 </div>

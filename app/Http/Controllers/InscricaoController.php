@@ -62,15 +62,11 @@ class InscricaoController extends Controller
         		// Define finalmente o nome
 				$nameFile = "{$name}.{$extension}";
 
-				if(strcmp($extension, $n1) || strcmp($extension, $n2) || strcmp($extension, $n3)){
-					return back();
-				}else{
         		// Faz o upload:
 				$upload = $request->comprovante->storeAs('comprovantes', $nameFile);
         		// Se tiver funcionado o arquivo foi armazenado em storage/app/public/comporvantes/nomedinamicoarquivo.extensao
-				}
         		// Verifica se NÃO deu certo o upload (Redireciona de volta)
-				if (!$upload )
+				if (!$upload || !$request->hasFile('comprovante') )
 					return redirect()
 				->back()
 				->with('error', 'Falha ao fazer upload')
