@@ -93,7 +93,7 @@ Adicionar minicurso
     {!! Form::text('rua', $old['rua'], ['class' => 'form-control']) !!}
   </div>
   <div class="d-flex flex-column mb-4">
-    {!! Form::label('cidade','Bairro do evento:') !!}
+    {!! Form::label('cidade','Cidade do evento:') !!}
     {!! Form::text('cidade', $old['cidade'], ['class' => 'form-control']) !!}
   </div>
   <div class="d-flex flex-column mb-4">
