@@ -58,7 +58,7 @@
 				<p>
 					<b style="text-transform:uppercase">E-mail</b><br>
 					<span style="line-height:10px">
-						<a href="mailto:animedudu12345@gmail.com" style="color:#3673b0" target="_blank">
+						<a href="mailto:dex@poli.br" style="color:#3673b0" target="_blank">
 						{{$email}}</a>
 					</span>
 				</p>
@@ -82,11 +82,10 @@
 
 	</tbody>
 </table>
-<div class="yj6qo ajU">
+<!-- <div class="yj6qo ajU">
 	<div id=":ps" class="ajR" role="button" tabindex="0" aria-label="Ocultar conteúdo expandido" aria-expanded="true" data-tooltip="Ocultar conteúdo expandido">
-		<img class="ajT" src="//ssl.gstatic.com/ui/v1/icons/mail/images/cleardot.gif"
 		></div>
-	</div>
+	</div> -->
 
 </body>
 </html>
