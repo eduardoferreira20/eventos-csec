@@ -38,7 +38,7 @@ Route::post('eventos/{id}/inscricoes', 'InscricaoController@inscricoes')->name('
 Route::get('users/{id}', 'UserController@index')->name('user.index');
 Route::post('users/{id}', 'UserController@edit')->name('user.edit');
 
-// rota para gerar o certificado
+//rota para gerar o certificado
 Route::get('certificado/download/{id}/usuario/{user_id}', 'ParticipanteController@pdfexport')->name('evento.pdf');
 
 //mando o email confirmando a inscrição junto com o comprovante com o seu QR Code
