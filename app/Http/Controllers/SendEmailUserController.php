@@ -70,6 +70,7 @@ class SendEmailUserController extends Controller
 			->subject($evento_name);
 			$message->from('dex@poli.br','CSEC');
 		});
+		// dd($data);
 		return back();
 	}
 
