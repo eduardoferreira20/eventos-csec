@@ -18,7 +18,7 @@ use View;
 class SendEmailUserController extends Controller
 {
 
-	public function send($id,$user_id){
+	public function send($id,$user_id,schedula $schedula){
 
 		$user=Inscricao::where('user_id',$user_id)->first();
 		$evento=Event::where('id',$id)->first();
@@ -42,6 +42,7 @@ class SendEmailUserController extends Controller
 			->subject($evento_name);
 			$message->from('dex@poli.br','CSEC');
 		});
+		// $schedula->call();
 
 		return back();
 
@@ -70,7 +71,7 @@ class SendEmailUserController extends Controller
 			->subject($evento_name);
 			$message->from('dex@poli.br','CSEC');
 		});
-		// dd($data);
+		
 		return back();
 	}
 
