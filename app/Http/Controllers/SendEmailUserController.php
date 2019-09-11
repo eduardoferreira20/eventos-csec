@@ -18,7 +18,7 @@ use View;
 class SendEmailUserController extends Controller
 {
 
-	public function send($id,$user_id,schedula $schedula){
+	public function send($id,$user_id){
 
 		$user=Inscricao::where('user_id',$user_id)->first();
 		$evento=Event::where('id',$id)->first();
