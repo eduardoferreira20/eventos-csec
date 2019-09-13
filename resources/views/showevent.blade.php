@@ -45,7 +45,7 @@
       {!! Form::close() !!}
     </div>
     <div class="d-flex align-self">
-    <a href="{{ route('lista.qr',$data['id']) }}" class="btn btn-primary">Download QRCode</a>
+    <a href="{{ route('lista.qr',$data['id']) }}" class="btn btn-primary" target="_blank">Download QRCode</a>
   </div>
     @endauth
   </div> 
