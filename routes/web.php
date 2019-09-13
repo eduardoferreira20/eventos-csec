@@ -44,10 +44,13 @@ Route::get('certificado/download/{id}/usuario/{user_id}', 'ParticipanteControlle
 //mando o email confirmando a inscrição junto com o comprovante com o seu QR Code
 Route::get('send/certificado/{id}/evento/{user_id}/presenca', 'SendEmailUserController@send')->name('send.email');
 Route::get('send/user/{id}/evento/{user_id}', 'SendEmailUserController@QR')->name('send.qr');
-
 Route::get('qrcode/{id}/{user_id}','QRController@qrcode')->name('qr');
+Route::get('qr/lista/{event_id}','QRController@listaQR')->name('lista.qr');
 
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+
+Route::get('scanQR/','QRController@leitor')->name('scanner');
+Route::post('scanQR/{user_id}','QRController@up')->name('scanner.up');
 
 Auth::routes();
 

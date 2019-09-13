@@ -44,6 +44,9 @@
       {!! Form::submit('Editar informações', ['class'=>'btn btn-primary']) !!}
       {!! Form::close() !!}
     </div>
+    <div class="d-flex align-self">
+    <a href="{{ route('lista.qr',$data['id']) }}" class="btn btn-primary">Download QRCode</a>
+  </div>
     @endauth
   </div> 
 </div>

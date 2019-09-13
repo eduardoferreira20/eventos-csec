@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/lib/bootstrap.min.css') }}">
 	<link rel='stylesheet' id='smartline-lite-stylesheet-css'  href="{{ asset('css/smartline/style.css') }}"/>
 	<link rel='stylesheet' id='smartline-lite-default-fonts-css'  href='//fonts.googleapis.com/css?family=Raleway%3A400%2C700%7CBitter&#038;subset=latin%2Clatin-ext' type='text/css' media='all'/>
