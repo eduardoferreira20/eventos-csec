@@ -190,6 +190,16 @@
 		</footer>
 	</div>
 	<!-- </body> -->
+	<script type="text/javascript">
+		CKEDITOR.replace( 'summary-ckeditor', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+    filebrowserFlashBrowseUrl: '/ckfinder/ckfinder.html?type=Flash',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+    filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+    filebrowserFlashUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+} );
+	</script>
 	<script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
 	<script>CKFinder.config( { connectorPath: '/ckfinder/connector' } );</script>
 	<script src="{{ asset('js/lib/jquery-3.3.1.js') }}"></script>

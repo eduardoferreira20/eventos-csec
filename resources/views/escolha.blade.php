@@ -8,23 +8,13 @@ Escolha uma forma de pagamento
 <br>
 <div class="row justify-content-between">
 	<div class="col-4">
-		Transferência
-		<br>
-		<br>
 		{!! Form::open(array('route' => ['events.inscricoes',$evento->id],'method'=>'POST')) !!}
 		{!! Form::hidden('info', 'mostrar_inscricao') !!}
 		{!! Form::submit('Tranferência', ['class'=>'btn btn-primary']) !!}
 		{!! Form::close() !!}
 	</div>
-	<div class="col-4">
-		  Boleto
-		<br>
-		<br>
-		{!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
-		{!! Form::hidden('info', 'mostrar_inscricao') !!}
-		{!! Form::submit('Boleto', ['class'=>'btn btn-primary']) !!}
-		{!! Form::close() !!}
-	</div>
 </div>
-
+<br>
+<br>
+<br>
 @endsection

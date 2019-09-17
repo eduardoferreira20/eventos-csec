@@ -43,6 +43,7 @@ class SendEmail extends Command
     {
         $user = Inscricao::all();
         $agora = Carbom::now();
+        
         if($user->evento->start_date <= $agora){
         foreach ($user as $user) {
 

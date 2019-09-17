@@ -1,4 +1,5 @@
 @extends('layouts.padrao')
+@include('ckfinder::setup')
 
 @section('style')
 @if($field == "apresentation" || $field == "palestrantes" || $field == "add_palestrante")
