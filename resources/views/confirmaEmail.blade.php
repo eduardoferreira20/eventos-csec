@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Certificado evento {{$title}}</title>
+	<title>Confirmação evento {{$title}}</title>
 </head>
 <body>
 	<div>
@@ -26,13 +26,10 @@
 					<h1 style="font-size:19px;font-weight:bold">
 						Prezado(a) {{$name}},
 					</h1>
-					<p>Obrigado pela participação no evento <b>{{$title}}</b>.</p>
-					<p>Verifique atentamente as informações sobre datas e locais contidas neste e-mail:</p>
+					<p>Gostariamos de confirmção a sua inscrição no evento <b>{{$title}}</b>.</p>
+					<p>Caso haja desistência por sua parte, gostariamos que você nos informasse assim que possivel para que seja possivel disponibilizar a sua vaga para outra pessoa.</p>
+					<p>Em caso de desistência, por favor, responder esse email informando o cancelamento da sua inscrição.</p>
 					<br>
-					<center>
-						<a href="{{(url('/certificado/download/'.$evento_id.'/usuario/'.$user_id) )}}" style="color:#515050;display:inline-block;border:1px solid #515050;padding:10px;border-radius:5px;text-decoration:none;font-size:15px" target="_blank">
-						Gerar certificado</a>
-					</center>
 				</td>
 			</tr>
 		</tbody></table>

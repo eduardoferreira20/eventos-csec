@@ -42,7 +42,6 @@ class SendEmailUserController extends Controller
 			->subject($evento_name);
 			$message->from('dex@poli.br','CSEC');
 		});
-		// $schedula->call();
 
 		return back();
 
