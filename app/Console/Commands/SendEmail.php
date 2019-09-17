@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Inscricao;
 use App\Mail\SendMail;
+use Carbom\Carbom;
 use Illuminate\Support\Facades\Mail;
 
 class SendEmail extends Command
@@ -41,6 +42,8 @@ class SendEmail extends Command
     public function handle()
     {
         $user = Inscricao::all();
+        $agora = Carbom::now();
+        if($user->evento->start_date <= $agora){
         foreach ($user as $user) {
 
         $to_name = $user->user->name;
@@ -61,6 +64,9 @@ class SendEmail extends Command
             $message->from('dex@poli.br','CSEC');
         });
     }
-        $this->info('E-mail enviados com sucesso');
+    $this->info('E-mail enviados com sucesso');
+}else{
+    $this->info('Evento encerrado');
+}
     }
 }
