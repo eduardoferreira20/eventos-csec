@@ -171,6 +171,9 @@
           {!! Form::submit('Inscrever-se', ['class'=>'btn btn-primary']) !!}
           {!! Form::close() !!}
           @endauth
+          @guest
+          Ainda não é cadastrado? <a class="btn btn-link" href="{{ route('register') }}">Clique aqui </a>e cadastre-se!
+          @endguest
           @endif
           @endif
         </div>
@@ -331,7 +334,8 @@
   </div>
 </div>
 @endauth
-<div class="d-flex flex-column" id="relatorio">
+
+<!-- <div class="d-flex flex-column" id="relatorio">
   <div class="d-flex mr-auto mb-3">
     <h2>
       Relatório final:
@@ -347,7 +351,7 @@
       @endauth
     </div>
   </div>
-</div>
+</div> -->
 <script type="text/javascript">
   var tempo = window.setInterval(carrega, 1000);
   function carrega()

@@ -12,17 +12,13 @@
                 <thead>
                   <tr>
                     <th scope="col"></th>
-                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody> 
                  @foreach($i as $q)
                  @if($q->status == 1)
                  <tr>
-                 <td scope="row"><p style="margin-top: 3%; font-size:30px">{{$q->user->name}}<p></td>
-                  <td scope="row">
-                  {!!QrCode::size(270)->generate($q->id)!!}
-                  </td>
+                 <td scope="row"><p style="margin-top: 3%; font-size:30px">{{$q->user->name}}<p style="align-items: center; margin-left: 20%;">{!!QrCode::size(170)->generate($q->id)!!}</p></p></td>
                 </tr>
                 @endif
                 @endforeach

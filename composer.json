@@ -60,6 +60,9 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
+        "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
+        "start": "node server.js",
+
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],

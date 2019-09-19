@@ -9,7 +9,7 @@
                 Informações de Login
             </h4>
         </div>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne" class="active" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
                 <div class="d-flex">
                     <div class="card">
@@ -35,7 +35,7 @@
                 Informações de credenciamento
             </h4>
         </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div id="collapseTwo" class="active" aria-labelledby="headingTwo" data-parent="#accordion">
             <div class="card-body">
                 <div class="d-flex flex-column form-group">
                     <div class="card">
