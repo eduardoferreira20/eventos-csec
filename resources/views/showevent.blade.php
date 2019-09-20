@@ -133,6 +133,46 @@
     </div> 
   </div>
 </div>
+<div class="d-flex flex-column">
+    <div class="d-flex mr-auto mb-3">
+      <h2>Palestras:</h2>
+    </div>
+    <div id="accordion d-flex text-justify">
+      <div class="card">
+        @foreach ($palestra as $palestra)
+          <div class="card-header d-flex" id="heading{{$palestra->id}}">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$palestra->id}}" aria-expanded="false" aria-controls="collapse{{$palestra->id}}">
+              {{$palestra->title}}
+            </button>
+            <div class="d-flex">
+              {!! Form::open(array('route' => ['events.edit', $data['id']],'method'=>'POST')) !!}
+              {!! Form::hidden('info', 'palestras') !!}
+              {!! Form::hidden('old', $palestra->id) !!}
+              {!! Form::submit('Editar campo', ['class'=>'btn btn-primary']) !!}
+              {!! Form::close() !!}
+            </div>
+          </div>
+          <div id="collapse{{$palestrante->id}}" class="collapse" aria-labelledby="heading{{$palestra->id}}" data-parent="#accordion">
+            <div class="card-body">
+              @if($palestra->apresentacao != null)
+                {!! $palestrante->apresentacao !!}
+              @else
+                <div class="text-muted">
+                  Nada para informar.
+                </div>
+              @endif 
+            </div>
+          </div>
+        @endforeach
+        <div class="card-header">
+          {!! Form::open(array('route' => ['events.edit', $data['id']],'method'=>'POST')) !!}
+          {!! Form::hidden('info', 'add_palestra') !!}
+          {!! Form::submit('+ Adicionar palestra', ['class'=>'btn btn-link']) !!}
+          {!! Form::close() !!}
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="d-flex flex-column" id="palestras">
   <div class="d-flex mr-auto mb-3">
     <h2>

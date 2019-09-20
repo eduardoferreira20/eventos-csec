@@ -20,6 +20,7 @@ use PDF;
 Use DateTime;
 use Validator;
 use Calendar;
+use App\Palestras;
 use Carbon\Carbon;
 
 class EventController extends Controller
@@ -128,9 +129,12 @@ class EventController extends Controller
 
 		$hora = Carbon::now();	
 
-		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado);
+		$palestra = Palestras::where('event_id',$id)->get();
 
+		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra);
 	}
+
+
 
 
 	public function aprovar($id){
@@ -308,38 +312,28 @@ class EventController extends Controller
 			->update(['end_date' => $end]);
 
 			return Redirect::to(route('events.show', ['id' => $id]));
-		}elseif($request['info'] == 'editar_palestrante'){
+		}elseif($request['info'] == 'editar_palestra'){
 
 
-			DB::table('palestrantes')
+			DB::table('palestras')
 			->where('event_id', $id)
 			->where('id', $request['id'])
-			->update(['nome' => $request['nome']]);
+			->update(['titulo' => $request['titulo']]);
 
-			DB::table('palestrantes')
+			DB::table('palestras')
 			->where('event_id', $id)
 			->where('id', $request['id'])
-			->update(['instituicao' => $request['instituicao']]);
+			->update(['palestrante' => $request['palestrante']]);
 
-			DB::table('palestrantes')
+			DB::table('palestras')
 			->where('event_id', $id)
 			->where('id', $request['id'])
-			->update(['cargo' => $request['cargo']]);
+			->update(['local' => $request['local']]);
 
-			DB::table('palestrantes')
+			DB::table('palestras')
 			->where('event_id', $id)
 			->where('id', $request['id'])
-			->update(['foto_perfil' => $request['foto_perfil']]);
-
-			DB::table('palestrantes')
-			->where('event_id', $id)
-			->where('id', $request['id'])
-			->update(['url' => $request['url']]);
-
-			DB::table('palestrantes')
-			->where('event_id', $id)
-			->where('id', $request['id'])
-			->update(['apresentacao' => $request['input']]);
+			->update(['apresentacao' => $request['apresentacao']]);
 
 			return Redirect::to(route('events.show', ['id' => $id]));
 
@@ -359,8 +353,7 @@ class EventController extends Controller
 
 			DB::table('palestras')
 			->where('event_id', $id)
-			->where('id', $request['id'])
-			->update(['palestrante_id' => $request['palestrante_id']]);
+			->update(['palestrante' => $request['palestrante']]);
 
 
 			DB::table('palestras')

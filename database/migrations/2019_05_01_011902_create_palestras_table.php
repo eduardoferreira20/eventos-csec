@@ -13,7 +13,7 @@ class CreatePalestrasTable extends Migration
      */
     public function up()
     {
-        Schema::create('palestras', function (Blueprint $table) {
+        Schema::create('palestra', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('event_id')->unsigned();
@@ -39,6 +39,6 @@ class CreatePalestrasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('palestras');
+        Schema::dropIfExists('palestra');
     }
 }

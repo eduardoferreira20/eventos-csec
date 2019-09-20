@@ -140,28 +140,23 @@ Adicionar minicurso
   </div>
   {!! Form::close() !!}
 </div>
-@elseif($field == "palestrantes")
+@elseif($field == "palestra")
 <div class="d-flex my-4">
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST', 'files' => true)) !!}
-  {!! Form::label('nome','Nome completo do palestrante:') !!}
-  {!! Form::text('nome', $old->nome, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('instituicao','Instituição responsável:') !!}
-  {!! Form::text('instituicao', $old->instituicao, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('cargo','Profissão:') !!}
-  {!! Form::text('cargo', $old->cargo, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('url','Endereço web da Instituição:') !!}
-  {!! Form::text('url', $old->url, ['class' => 'form-control mb-4']) !!}
- 
-  <div class="d-flex flex-column">
-    {!! Form::label('input','Descrição do palestrante:') !!}
-    {!! Form::textarea('input', $old->apresentacao, ['id' => 'summary-ckeditor']) !!}   
-  </div>
+  {!! Form::label('titulo','Nome da palestra:') !!}
+  {!! Form::text('titulo', $old->titulo, ['class' => 'form-control mb-4']) !!}
+  {!! Form::label('palestrante','Nome completo do palestrante:') !!}
+  {!! Form::text('palestrante', $old->palestrante, ['class' => 'form-control mb-4']) !!}
+  {!! Form::label('apresentacao','Apresentação:') !!}
+  {!! Form::textarea('apresentacao', $old->apresentacao, ['id' => 'summary-ckeditor']) !!}
+  {!! Form::label('local','Local:') !!}
+  {!! Form::text('local', $old->local, ['class' => 'form-control mb-4']) !!}
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
       Voltar
     </a>
     {!! Form::hidden('id', $old->id) !!}
-    {!! Form::hidden('info', 'editar_palestrante') !!}
+    {!! Form::hidden('info', 'editar_palestra') !!}
     {!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
   </div>
   {!! Form::close() !!}
@@ -219,24 +214,28 @@ Adicionar minicurso
   </div>
   {!! Form::close() !!}
 </div>
-@elseif($field == "add_palestrante")
+@elseif($field == "add_palestra")
 <div class="d-flex my-4">
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST')) !!}
-  {!! Form::label('nome','Nome completo do palestrante:') !!}
-  {!! Form::text('nome', null, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('instituicao','Instituição responsável:') !!}
-  {!! Form::text('instituicao', null, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('url','Endereço web da Instituição:') !!}
-  {!! Form::text('url', null, ['class' => 'form-control mb-4']) !!}
+  {!! Form::label('titulo','Título:') !!}
+  {!! Form::text('titulo', null, ['class' => 'form-control mb-4']) !!}
+  {!! Form::label('palestrante','Palestrante:') !!}
+  {!! Form::text('palestrante', null, ['class' => 'form-control mb-4']) !!}
+  {!! Form::label('local','Endereço web da Instituição:') !!}
+  {!! Form::text('local', null, ['class' => 'form-control mb-4']) !!}
+  {!! Form::label('inicio_inscricoes','Início das inscrições:') !!}
+  {!! Form::date('inicio_inscricoes', null, ['class' => 'form-control']) !!}
+  {!! Form::label('fim_inscricoes','Fim das inscrições:') !!}
+  {!! Form::date('fim_inscricoes', null, ['class' => 'form-control']) !!}
   <div class="d-flex flex-column">
-    {!! Form::label('input','Descrição do palestrante:') !!}
-    {!! Form::textarea('input', null, ['id' => 'summary-ckeditor']) !!} 
+    {!! Form::label('apresentacao','Descrição da palestra:') !!}
+    {!! Form::textarea('apresentacao', null, ['id' => 'summary-ckeditor']) !!} 
   </div> 
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
       Voltar
     </a>
-    {!! Form::hidden('info', 'adicionar_palestrante') !!}
+    {!! Form::hidden('info', 'adicionar_palestra') !!}
     {!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
   </div>
   {!! Form::close() !!}
