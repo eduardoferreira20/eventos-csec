@@ -12,6 +12,8 @@
 	<link rel='stylesheet' id='smartline-lite-default-fonts-css'  href='//fonts.googleapis.com/css?family=Raleway%3A400%2C700%7CBitter&#038;subset=latin%2Clatin-ext' type='text/css' media='all'/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+	<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+	<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
 	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 	<style type="text/css">
 		@media only screen and (min-width: 60em) {
@@ -139,7 +141,7 @@
 							{!! Form::close() !!}
 						</div>
 						<div class="d-flex mt-3 mb-0">
-							<a class="btn btn-link" href="{{ route('register') }}">
+							<a class="btn btn-primary" href="{{ route('register') }}">
 								Não possui conta? Crie aqui!
 							</a>
 						</div>
@@ -191,7 +193,7 @@
 	</div>
 	<!-- </body> -->
 	<script type="text/javascript">
-		CKEDITOR.replace( 'summary-ckeditor', {
+		CKEDITOR.replace( 'editor1', {
     filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
     filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
     filebrowserFlashBrowseUrl: '/ckfinder/ckfinder.html?type=Flash',
@@ -200,6 +202,16 @@
     filebrowserFlashUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
 } );
 	</script>
+	 <script>
+                        ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                </script>
 	<script type="text/javascript" src="/js/ckfinder/ckfinder.js"></script>
 	<script>CKFinder.config( { connectorPath: '/ckfinder/connector' } );</script>
 	<script src="{{ asset('js/lib/jquery-3.3.1.js') }}"></script>
@@ -210,3 +222,10 @@
 	@yield('script')
 </body>
 </html>	
+
+<style type="text/css">
+	CKFinder.widget( 'ckfinder-widget', {
+	width: '100%',
+	height: 700
+} );
+</style>

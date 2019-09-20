@@ -37,7 +37,8 @@ Adicionar minicurso
 @if($field == "apresentation")
 <div class="d-flex my-4">
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST')) !!}
-  {!! Form::textarea('input', $old->apresentation, ['id' => 'summary-ckeditor']) !!}
+  {!! Form::textarea('input', $old->apresentation, ['id' => 'editor1']) !!}
+
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
       Voltar
@@ -50,7 +51,7 @@ Adicionar minicurso
 @elseif($field == "programacao")
 <div class="d-flex my-4">
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST')) !!}
-  {!! Form::textarea('input', $old->programacao, ['id' => 'summary-ckeditor']) !!}
+  {!! Form::textarea('input', $old->programacao, ['id' => 'editor1']) !!}
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
       Voltar
@@ -63,7 +64,7 @@ Adicionar minicurso
 @elseif($field == "folder")
 <div class="d-flex my-4">
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST')) !!}
-  {!! Form::textarea('input', $old->folder, ['id' => 'summary-ckeditor']) !!}
+  {!! Form::textarea('input', $old->folder, ['id' => 'editor1']) !!}
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
       Voltar

@@ -55,7 +55,7 @@
 				<p>
 					<b style="text-transform:uppercase">E-mail</b><br>
 					<span style="line-height:10px">
-						<a href="mailto:animedudu12345@gmail.com" style="color:#3673b0" target="_blank">
+						<a href="mailto:dex@poli.br" style="color:#3673b0" target="_blank">
 						{{$email}}</a>
 					</span>
 				</p>
@@ -76,7 +76,6 @@
 				</p>
 			</td>
 		</tr>
-
 	</tbody>
 </table>
 </body>

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb235de16f0012646a5376260be1a352",
+    "content-hash": "77a0734f688157a19c26ca9ca3e55d82",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.3",
+            "version": "3.112.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c27c64904dcf3f3131a927b09b0036273a22a0ae"
+                "reference": "13e5e52f8ceccd7e476cc6caef3eed941797fd31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c27c64904dcf3f3131a927b09b0036273a22a0ae",
-                "reference": "c27c64904dcf3f3131a927b09b0036273a22a0ae",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/13e5e52f8ceccd7e476cc6caef3eed941797fd31",
+                "reference": "13e5e52f8ceccd7e476cc6caef3eed941797fd31",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-09-18T18:09:31+00:00"
+            "time": "2019-09-19T20:36:59+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -193,16 +193,16 @@
         },
         {
             "name": "ckfinder/ckfinder-laravel-package",
-            "version": "v3.4.5.1",
+            "version": "v3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ckfinder/ckfinder-laravel-package.git",
-                "reference": "e815c1dec7dbcd405b9e669928edb1aed069c685"
+                "reference": "a2a67b40ca2bedea4cff72c39335e7f2a1dd59c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckfinder/ckfinder-laravel-package/zipball/e815c1dec7dbcd405b9e669928edb1aed069c685",
-                "reference": "e815c1dec7dbcd405b9e669928edb1aed069c685",
+                "url": "https://api.github.com/repos/ckfinder/ckfinder-laravel-package/zipball/a2a67b40ca2bedea4cff72c39335e7f2a1dd59c3",
+                "reference": "a2a67b40ca2bedea4cff72c39335e7f2a1dd59c3",
                 "shasum": ""
             },
             "require": {
@@ -234,7 +234,7 @@
                 "MIT"
             ],
             "description": "CKFinder 3 package for Laravel",
-            "time": "2019-05-15T13:55:49+00:00"
+            "time": "2019-09-06T08:55:03+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
