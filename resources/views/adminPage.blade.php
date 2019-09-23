@@ -21,8 +21,7 @@
                  @foreach($evento as $evento)
             
                  <tr>
-                 <td scope=""><a href="{{route('admin.palestras',$evento->id)}}"><p style="margin-top: 3%; font-size:30px">{{$evento->title}}</p></a></td>
-
+                 <td scope=""><a href="{{route('admin.palestras',$evento->id)}}"><p style="margin-top: 3%; font-size:15px">{{$evento->title}}</p></a></td>
                 </tr>
                 @endforeach
               </tbody>
