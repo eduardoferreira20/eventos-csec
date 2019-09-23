@@ -110,7 +110,7 @@ class InscricaoController extends Controller
 
 	public function lista($id){
 
-		$boletos = DB::table('inscricaos')->where('event_id',$id)->get();
+		$boletos = Inscricao::where('event_id',$id)->get();
 		return view('lista')->with('boletos',$boletos);
 	}
 

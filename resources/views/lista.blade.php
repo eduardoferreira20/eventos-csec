@@ -20,8 +20,8 @@
   <tbody>
   	@foreach($boletos as $boleto)
     <tr>
-      <td>{{$boleto->event_id}}</td>
-      <td>{{$boleto->user_id}}</td>
+      <td>{{$boleto->user->name}}</td>
+      <td>{{$boleto->user->email}}</td>
       <td>{{date('d-m-Y à H:m',strtotime($boleto->created_at))}}</td>
       <td>
       	<a href="{{route('pay.comprovante', $boleto->comprovante_path)}}"  class="btn btn-primary">
