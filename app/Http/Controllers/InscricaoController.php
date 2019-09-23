@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Filesystem\Filesystem;
 use App\Inscricao;
 use App\User;
+use App\Oficinas;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\VerifyCsrfToken;
@@ -87,6 +88,18 @@ class InscricaoController extends Controller
 			]);
 
 			return Redirect::to(route('events.show', ['id' => $id]));
+
+		}elseif($request['info'] == 'inscricao_palestra'){
+
+			$user = Auth::user()->id;
+
+			Oficinas::create([
+				'user_id' => $user,
+				'event_id' => $id,
+				'status' => false,
+			]);
+			return Redirect::to(route('events.show', ['id' => $id]));
+
 		}
 	}
 

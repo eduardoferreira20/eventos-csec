@@ -140,17 +140,27 @@ Adicionar minicurso
   </div>
   {!! Form::close() !!}
 </div>
-@elseif($field == "palestra")
+@elseif($field == "palestras")
 <div class="d-flex my-4">
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST', 'files' => true)) !!}
   {!! Form::label('titulo','Nome da palestra:') !!}
   {!! Form::text('titulo', $old->titulo, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('palestrante','Nome completo do palestrante:') !!}
+  <!-- {!! Form::label('palestrante','Nome do palestrante:') !!}
   {!! Form::text('palestrante', $old->palestrante, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('apresentacao','Apresentação:') !!}
-  {!! Form::textarea('apresentacao', $old->apresentacao, ['id' => 'summary-ckeditor']) !!}
   {!! Form::label('local','Local:') !!}
-  {!! Form::text('local', $old->local, ['class' => 'form-control mb-4']) !!}
+  {!! Form::text('local', $old->local, ['class' => 'form-control mb-4']) !!} -->
+  <div class="d-flex flex-column mr-4">
+      {!! Form::label('start_date','Data de início:') !!}
+      {!! Form::date('start_date', $old->start_date, ['class' => 'form-control']) !!}
+    </div>
+    <div class="d-flex flex-column mr-4">
+      {!! Form::label('end_date','Data de fim:') !!}
+      {!! Form::date('end_date', $old->start_date, ['class' => 'form-control']) !!}
+    </div>
+    <div class="d-flex flex-column">
+    {!! Form::label('input','Apresentação:') !!}
+    {!! Form::textarea('input', $old->apresentacao, ['id' => 'editor1']) !!} 
+  </div> 
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
       Voltar
@@ -202,7 +212,7 @@ Adicionar minicurso
   </div>
   <div class="d-flex flex-column">
     {!! Form::label('input','Descrição do palestrante:') !!}
-    {!! Form::textarea('input', $old->apresentation, ['id' => 'summary-ckeditor']) !!}   
+    {!! Form::textarea('input', $old->apresentation, ['id' => 'editor1']) !!}   
   </div>
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
@@ -219,17 +229,21 @@ Adicionar minicurso
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST')) !!}
   {!! Form::label('titulo','Título:') !!}
   {!! Form::text('titulo', null, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('palestrante','Palestrante:') !!}
-  {!! Form::text('palestrante', null, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('local','Endereço web da Instituição:') !!}
-  {!! Form::text('local', null, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('inicio_inscricoes','Início das inscrições:') !!}
-  {!! Form::date('inicio_inscricoes', null, ['class' => 'form-control']) !!}
-  {!! Form::label('fim_inscricoes','Fim das inscrições:') !!}
-  {!! Form::date('fim_inscricoes', null, ['class' => 'form-control']) !!}
+  <!-- {!! Form::label('palestrante','Palestrante:') !!}
+  {!! Form::text('palestrante', null, ['class' => 'form-control mb-4']) !!} -->
+  <!-- {!! Form::label('local','Local:') !!}
+  {!! Form::text('local', null, ['class' => 'form-control mb-4']) !!} -->
+  <div class="d-flex flex-column mr-4 clockpicker">
+  {!! Form::label('start_date','Início das inscrições:') !!}
+  {!! Form::date('start_date', null, ['class' => 'form-control']) !!}
+</div>
+  <div class="d-flex flex-column mr-4 clockpicker">
+  {!! Form::label('end_date','Fim das inscrições:') !!}
+  {!! Form::date('end_date', null, ['class' => 'form-control']) !!}
+</div>
   <div class="d-flex flex-column">
-    {!! Form::label('apresentacao','Descrição da palestra:') !!}
-    {!! Form::textarea('apresentacao', null, ['id' => 'summary-ckeditor']) !!} 
+    {!! Form::label('input','Descrição da palestra:') !!}
+    {!! Form::textarea('input', null, ['id' => 'editor1']) !!} 
   </div> 
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
@@ -281,7 +295,7 @@ Adicionar minicurso
   </div>
   <div class="d-flex flex-column">
     {!! Form::label('input','Descrição do minicurso:') !!}
-    {!! Form::textarea('input', null, ['id' => 'summary-ckeditor']) !!} 
+    {!! Form::textarea('input', null, ['id' => 'editor1']) !!} 
   </div> 
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">

@@ -131,7 +131,9 @@ class EventController extends Controller
 
 		$palestra = Palestras::where('event_id',$id)->get();
 
-		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra);
+		$inscri = Oficinas::where('event_id',$id)->get();
+
+		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra)->with('inscri',$inscri);
 	}
 
 
@@ -313,6 +315,13 @@ class EventController extends Controller
 
 			return Redirect::to(route('events.show', ['id' => $id]));
 		}elseif($request['info'] == 'editar_palestra'){
+			$sd = $request['start_date'];
+			$st = $request['start_time'];
+			$ed = $request['end_date'];
+			$et = $request['end_time'];
+
+			$start = date('Y-m-d H:i:s', strtotime("$sd $st"));
+			$end = date('Y-m-d H:i:s', strtotime("$ed $et"));
 
 
 			DB::table('palestras')
@@ -320,20 +329,20 @@ class EventController extends Controller
 			->where('id', $request['id'])
 			->update(['titulo' => $request['titulo']]);
 
-			DB::table('palestras')
-			->where('event_id', $id)
-			->where('id', $request['id'])
-			->update(['palestrante' => $request['palestrante']]);
+			// DB::table('palestras')
+			// ->where('event_id', $id)
+			// ->where('id', $request['id'])
+			// ->update(['palestrante' => $request['palestrante']]);
+
+			// DB::table('palestras')
+			// ->where('event_id', $id)
+			// ->where('id', $request['id'])
+			// ->update(['local' => $request['local']]);
 
 			DB::table('palestras')
 			->where('event_id', $id)
 			->where('id', $request['id'])
-			->update(['local' => $request['local']]);
-
-			DB::table('palestras')
-			->where('event_id', $id)
-			->where('id', $request['id'])
-			->update(['apresentacao' => $request['apresentacao']]);
+			->update(['apresentacao' => $request['input']]);
 
 			return Redirect::to(route('events.show', ['id' => $id]));
 
@@ -492,14 +501,19 @@ class EventController extends Controller
 
 			return Redirect::to(route('events.show', ['id' => $id]));
 
-		}elseif($request['info'] == 'adicionar_palestras'){
-			Palestra::create([
+		}elseif($request['info'] == 'adicionar_palestra'){
+			Palestras::create([
 				'event_id' => $id,
-				'title' => $request['title'],
-				'palestrante_id' => $request['palestrante_id'],
-				'apresentation' => $request['input'],
+				'titulo' => $request['titulo'],
+				'palestrante' => $request['palestrante'],
 				'start_date' => $request['start_date'],
 				'end_date' => $request['end_date'],
+				'inicio_inscricoes' =>$request['inicio_inscricoes'],
+				'fim_inscricoes' =>$request['fim_inscricoes'],
+				'local'=> $request['local'],
+				'apresentacao' => $request['input'],
+				'presenca' => false,
+			
 			]);
 
 			return Redirect::to(route('events.show', ['id' => $id]));

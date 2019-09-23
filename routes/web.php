@@ -12,6 +12,9 @@
 */
 Route::get('/', 'EventController@index')->name('index');
 
+Route::get('admin/page','AdminPageController@showInscricoes')->name('admin');
+Route::get('admin/page/{event_id}/palestras','AdminPageController@showInscricoes')->name('admin.palestras');
+
 //mostra o calendário de eventos e adiciona eventos
 Route::get('eventos', 'EventController@calendario')->name('events.index');
 Route::post('eventos', 'EventController@adicionar')->name('events.add');

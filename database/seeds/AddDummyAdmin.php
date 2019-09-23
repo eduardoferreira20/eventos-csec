@@ -15,7 +15,7 @@ class AddDummyAdmin extends Seeder
         DB::table('admins')->insert([
             'name' => 'Administrador CSEC',
             'email' => 'dex@poli.br',
-            'password' => Hash::make('123456'),
+            'password' => Hash::make('csec7506poli'),
         ]);
     }
 }

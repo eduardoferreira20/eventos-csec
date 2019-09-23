@@ -27,7 +27,7 @@ class Palestras extends Migration
             $table->date('fim_inscricoes')->nullable();
             $table->string('local')->nullable();
             $table->text('apresentacao')->nullable();
-            $table->boolean('presenca');
+            $table->boolean('presenca')->nullable();
             
             $table->timestamps();
         });

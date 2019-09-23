@@ -142,8 +142,9 @@
         @foreach ($palestra as $palestra)
           <div class="card-header d-flex" id="heading{{$palestra->id}}">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$palestra->id}}" aria-expanded="false" aria-controls="collapse{{$palestra->id}}">
-              {{$palestra->title}}
+              {{$palestra->titulo}}
             </button>
+            @auth('admin-web')
             <div class="d-flex">
               {!! Form::open(array('route' => ['events.edit', $data['id']],'method'=>'POST')) !!}
               {!! Form::hidden('info', 'palestras') !!}
@@ -151,25 +152,52 @@
               {!! Form::submit('Editar campo', ['class'=>'btn btn-primary']) !!}
               {!! Form::close() !!}
             </div>
+            @endauth
           </div>
-          <div id="collapse{{$palestrante->id}}" class="collapse" aria-labelledby="heading{{$palestra->id}}" data-parent="#accordion">
+          <div id="collapse{{$palestra->id}}" class="collapse" aria-labelledby="heading{{$palestra->id}}" data-parent="#accordion">
             <div class="card-body">
               @if($palestra->apresentacao != null)
-                {!! $palestrante->apresentacao !!}
-              @else
-                <div class="text-muted">
-                  Nada para informar.
-                </div>
-              @endif 
+                {!! $palestra->apresentacao !!}
+
+            @foreach($inscri as $ins)
+              
+
+                @auth('user-web')
+               
+              @if(Auth::user()->id == $ins->user_id)
+
+              <div class="alert alert-success" role="alert">                
+               <p>Inscrito com sucesso!</p>
+                </div>   
+
+               @if(Auth::user()->id != $ins->user_id)
+
+                {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
+                {!! Form::hidden('info', 'inscricao_palestra') !!}
+                {!! Form::submit('Inscreva-se', ['class'=>'btn btn-link']) !!}
+                {!! Form::close() !!}
+                @endif
+                @endif
+
+                @endauth
+
+              @endforeach
+              @endif
+              
+              @guest
+                Ainda não é cadastrado? <a class="btn btn-link" href="{{ route('register') }}">Clique aqui </a>e cadastre-se!
+                @endguest 
             </div>
           </div>
         @endforeach
+        @auth('admin-web')
         <div class="card-header">
           {!! Form::open(array('route' => ['events.edit', $data['id']],'method'=>'POST')) !!}
           {!! Form::hidden('info', 'add_palestra') !!}
           {!! Form::submit('+ Adicionar palestra', ['class'=>'btn btn-link']) !!}
           {!! Form::close() !!}
         </div>
+        @endauth
       </div>
     </div>
   </div>
