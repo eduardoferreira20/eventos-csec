@@ -170,13 +170,13 @@
                <p>Inscrito com sucesso!</p>
                 </div>   
 
-               
+               @if(Auth::user()->id != $ins->user_id )
 
                 {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
                 {!! Form::hidden('info', 'inscricao_palestra') !!}
                 {!! Form::submit('Inscreva-se', ['class'=>'btn btn-link']) !!}
                 {!! Form::close() !!}
-              
+                @endif
                 @endif
 
                 @endauth
