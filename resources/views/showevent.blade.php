@@ -170,7 +170,7 @@
                <p>Inscrito com sucesso!</p>
                 </div>   
 
-               @if(Auth::user()->id != $ins->user_id)
+               @if(Auth::user()->id != $ins->user_id || Auth::user()-id == null)
 
                 {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
                 {!! Form::hidden('info', 'inscricao_palestra') !!}
