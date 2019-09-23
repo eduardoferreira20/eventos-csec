@@ -229,21 +229,22 @@
           {!! Form::close() !!}
           @endauth
           @else
-          @if(date('d-m', strtotime($hora)) > date('d-m',strtotime($data['fim_inscricoes'])))
+         <!--  @if(date('d-m', strtotime($hora)) > date('d-m',strtotime($data['fim_inscricoes'])))
           <div class="alert alert-danger" role="alert">
             Inscrições encerradas!
-          </div>
+          </div> -->
           @else
           @auth('user-web')
           {!! Form::open(array('route' => ['events.escolha', $data['id']],'method'=>'GET')) !!}
           {!! Form::submit('Inscrever-se', ['class'=>'btn btn-primary']) !!}
           {!! Form::close() !!}
           @endauth
+          @endif
+          @endif
+          
           @guest
           Ainda não é cadastrado? <a class="btn btn-link" href="{{ route('register') }}">Clique aqui </a>e cadastre-se!
           @endguest
-          @endif
-          @endif
         </div>
       </div>
     </div>
