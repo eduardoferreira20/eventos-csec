@@ -10,7 +10,7 @@ Escolha uma forma de pagamento
 	<div class="col-4">
 		{!! Form::open(array('route' => ['events.inscricoes',$evento->id],'method'=>'POST')) !!}
 		{!! Form::hidden('info', 'mostrar_inscricao') !!}
-		{!! Form::submit('Tranferência', ['class'=>'btn btn-primary']) !!}
+		{!! Form::submit('Transferência', ['class'=>'btn btn-primary']) !!}
 		{!! Form::close() !!}
 	</div>
 </div>

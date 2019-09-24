@@ -136,9 +136,6 @@ class EventController extends Controller
 		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra)->with('inscri',$inscri);
 	}
 
-
-
-
 	public function aprovar($id){
 
 		$aprovar = Inscricao::find($id);
@@ -186,6 +183,7 @@ class EventController extends Controller
 	}
 	public function edit($id, Request $request){
 
+		$users = DB::table('users')->get()->pluck('name', 'id');
 
 		$check = null;
 		if($request['info'] == 'general'){
@@ -206,9 +204,10 @@ class EventController extends Controller
 				'all_day' => $check->all_day,
 				'start_time' => date('H:i', strtotime($check->start_date)),
 				'end_time' => date('H:i', strtotime($check->end_date)),
+				'user_id' => $check->user_id,
 			);
 
-			return view('editevent')
+			return view('editevent')->with('users',$users)
 			->with('field', $request['info'])
 			->with('old', $check)
 			->with('id', $id);	
@@ -270,6 +269,8 @@ class EventController extends Controller
 			$ed = $request['end_date'];
 			$et = $request['end_time'];
 
+			$userslist = User::get()->pluck('name', 'id');
+			
 			$start = date('Y-m-d H:i:s', strtotime("$sd $st"));
 			$end = date('Y-m-d H:i:s', strtotime("$ed $et"));
 
@@ -312,6 +313,10 @@ class EventController extends Controller
 			DB::table('events')
 			->where('id', $id)
 			->update(['end_date' => $end]);
+
+			// DB::table('events')
+			// ->where('id', $id)
+			// ->update(['user_id' => $users]);
 
 			return Redirect::to(route('events.show', ['id' => $id]));
 		}elseif($request['info'] == 'editar_palestra'){

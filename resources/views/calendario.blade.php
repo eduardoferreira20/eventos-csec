@@ -58,6 +58,11 @@ Calendário de eventos
                 {!! Form::text('valor', null, ['class' => 'form-control','placeholder' => 'Ex.: 20,00']) !!}
                 </div>
             </div>
+            <div class="d-flex flex-fill">
+                <div class="d-flex mr-4">
+                    {!! Form::select('user_id', $users, null, ['placeholder' => 'Escolher usuário', 'class' => 'form-control']) !!}
+                </div>
+                </div>
             <div class="d-flex flex-column mb-4">
                 {!! Form::label('hora_comple','Horas complementares:') !!}
                 {!! Form::text('hora_comple', null, ['class' => 'form-control', 'placeholder' => 'Ex.: 8 (oito)']) !!}
@@ -74,17 +79,17 @@ Calendário de eventos
                 {!! Form::label('cidade','Cidade:') !!}
                 {!! Form::text('cidade', null, ['class' => 'form-control', 'placeholder' => 'Ex.: Recife']) !!}
             </div>
-            <div class="d-flex flex-column mb-4">
-                {!! Form::label('link','Link do evento:') !!}
-                {!! Form::text('link', null, ['class' => 'form-control', 'placeholder' => 'Caso tenha um site']) !!}
-            </div>
             <div class="d-flex flex-fill">
                 <div class="d-flex mr-4">
                     {!! Form::select('user_id', $users, null, ['placeholder' => 'Escolher usuário', 'class' => 'form-control']) !!}
                 </div>
+                </div>
+            <div class="d-flex flex-column mb-4">
+                {!! Form::label('link','Link do evento:') !!}
+                {!! Form::text('link', null, ['class' => 'form-control', 'placeholder' => 'Caso tenha um site']) !!}
+            </div>
                 <div class="d-flex">
                     {!! Form::submit('Criar Evento',['class'=>'btn btn-primary']) !!}
-                </div>
             </div>
             {!! Form::close() !!}
         </div>
