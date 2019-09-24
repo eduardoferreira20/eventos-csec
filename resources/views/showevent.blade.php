@@ -21,16 +21,7 @@
     </h4>
     <h6>Período:
       {{$data['start_date']}}  às  {{$data['start_time']}}
-      @if($data['start_date'] != $data['end_date'])
-      Até {{$data['end_date']}}
-      @endif
-      @if($data['all_day'])
-      <br>
-      <br>
-      Durante todo o dia.
-      @else
       até {{$data['end_date']}} às {{$data['end_time']}}
-      @endif
     </h6>
     @if($data['link'] != null)
     <h6>Para mais informações:<a target="_blank" href="{{$data['link']}}">  {{$data['link']}}</a></h6>

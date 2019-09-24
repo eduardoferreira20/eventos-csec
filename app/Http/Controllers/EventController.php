@@ -100,7 +100,7 @@ class EventController extends Controller
 			'inicio_inscricoes' => $event->inicio_inscricoes,
 			'fim_inscricoes' => $event->fim_inscricoes,
 			'start_date' => date('d-m', strtotime($event->start_date)),
-			'end_date' => date('d-m', strtotime($event->start_date)),
+			'end_date' => date('d-m', strtotime($event->end_date)),
 			'all_day' => $event->all_day,
 			'e_pago' => $event->e_pago,
 			'valor' => $event->valor,
@@ -200,7 +200,7 @@ class EventController extends Controller
 				'valor' => $check->valor, 
 				'hora_comple' => $check->hora_comple,
 				'start_date' => date('Y-m-d', strtotime($check->start_date)),
-				'end_date' => date('Y-m-d', strtotime($check->start_date)),
+				'end_date' => date('Y-m-d', strtotime($check->end_date)),
 				'all_day' => $check->all_day,
 				'start_time' => date('H:i', strtotime($check->start_date)),
 				'end_time' => date('H:i', strtotime($check->end_date)),
@@ -270,7 +270,7 @@ class EventController extends Controller
 			$et = $request['end_time'];
 
 			$userslist = User::get()->pluck('name', 'id');
-			
+
 			$start = date('Y-m-d H:i:s', strtotime("$sd $st"));
 			$end = date('Y-m-d H:i:s', strtotime("$ed $et"));
 
