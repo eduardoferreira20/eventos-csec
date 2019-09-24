@@ -56,12 +56,12 @@
   </div>
   <div class="d-flex flex-column">
     <ul class="nav nav-tabs ml-0 mb-0">
-      <li class="active"><a data-toggle="tab" href="#descricao">Descrição</a></li>
+      <li class=""><a data-toggle="tab" href="#descricao">Descrição</a></li>
       <li class=""><a data-toggle="tab" href="#programacao">Programação</a></li>
-      <li class=""><a data-toggle="tab" href="#folder">Folder</a></li>
+      <li class="active"><a data-toggle="tab" href="#folder">Folder</a></li>
     </ul>
     <div class="tab-content">
-      <div id="descricao" class="tab-pane fade in active">
+      <div id="descricao" class="tab-pane fade">
         <div class="card">
           <div class="card-body">
             <div class="d-flex mb-3 flex-column">
@@ -107,7 +107,7 @@
           </div>
         </div>
       </div>
-      <div id="folder" class="tab-pane fade">
+      <div id="folder" class="tab-pane fade in active">
         <div class="card">
           <div class="card-body">
             <div class="d-flex mb-3 flex-column">
@@ -269,6 +269,7 @@
                 <thead>
                   <tr>
                     <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
                     <th scope="col">Status inscrições</th>
                     @auth('admin-web')
                     <th scope="col">Ação</th>
@@ -279,6 +280,7 @@
                  @foreach ($inscricaos as $inscricaos)
                  <tr>
                   <td scope="row">{{$inscricaos->user->name}}</td>
+                  <td>{{$inscricaos->user->email}}</td>
                   @if($inscricaos->status == 0)
                   <td>Aguardando confirmação...</td>
                   @else
