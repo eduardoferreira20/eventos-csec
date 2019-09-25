@@ -11,6 +11,7 @@ use App\Oficinas;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Support\Facades\Mail;
 use App\Event;
 use DB;
 use Illuminate\Http\File;
@@ -76,9 +77,24 @@ class InscricaoController extends Controller
 
 			//pega o id do ususario logado
 			$user = Auth::user()->id;
+			$pathFile = storage_path('app/public/comprovantes/'.$nameFile);
 
-			//insero os dados no banco
-			Inscricao::create([
+			$eventos = Event::where('id',$id)->first();
+
+		$to_name =Auth::user()->name;
+		$user_name =Auth::user()->name;
+		$event = $eventos->title;
+		$to_email = "ejfs@ecomp.poli.br";
+
+		
+		$data = array('email'=>$to_email,'name'=>$event ,'title'=>$user_name,"body" => "Certificado do evento");
+
+		Mail::send('comprovante',$data, function($message) use ($to_name, $to_email,$event,$pathFile) {
+			$message->to($to_email, $to_name)
+			->subject($event)->attach($pathFile);
+			$message->from(Auth::user()->email,Auth::user()->name);
+		});
+		Inscricao::create([
 				'user_id' => $user,
 				'event_id' => $id,
 				'status'=> false,
@@ -86,6 +102,7 @@ class InscricaoController extends Controller
 				'presenca' => false,
 				'envio' => false,
 			]);
+
 
 			return Redirect::to(route('events.show', ['id' => $id]));
 
