@@ -33,6 +33,7 @@ class RegisterController extends Controller
             'tipo' => $data['tipo'],
             'phone' => $data['phone'],
             'celular' => $data['celular'],
+            'posicao' => $data['posicao'],
         ]);
     }
 

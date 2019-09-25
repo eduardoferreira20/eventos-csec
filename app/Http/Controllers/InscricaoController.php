@@ -100,6 +100,21 @@ class InscricaoController extends Controller
 			]);
 			return Redirect::to(route('events.show', ['id' => $id]));
 
+		
+	}elseif($request['info'] == 'inscricao_docente'){
+
+			$user = Auth::user()->id;
+
+			Inscricao::create([
+				'user_id' => $user,
+				'event_id' => $id,
+				'status'=> false,
+				'comprovante_path' => "Docente.pdf",
+				'presenca' => false,
+				'envio' => false,
+			]);
+			return Redirect::to(route('events.show', ['id' => $id]));
+
 		}
 	}
 
