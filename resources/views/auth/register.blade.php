@@ -43,9 +43,7 @@
                     {!! Form::label('name','Nome Completo: ') !!}
                     {!! Form::text('name', null, ['class' => 'form-control', 'style' => 'width:500px']) !!}
                 </div>
-                <div class="card-body d-flex flex-column">
-                {!! Form::select('posicao', ['1' => 'Docente', '2' => 'Discente'], null, ['class' => 'form-control mb-3', 'style' => 'width:150px', 'onChange' => 'yesnoCheck(this)', 'placeholder' => 'Selecione']) !!}
-            </div>
+                
             </div>
             <div class="card my-4">
                 <div class="card-body d-flex flex-column">
