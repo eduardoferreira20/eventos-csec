@@ -203,11 +203,7 @@
     <div id="inscricao" class="tab-pane fade in active">
       <div class="card">
         <div class="card-body">
-          {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
-                {!! Form::hidden('info', 'inscricao_docente') !!}
-                {!! Form::submit('Inscreva-se', ['class'=>'btn btn-link']) !!}
-                {!! Form::close() !!}
-          @else
+          
           @auth('admin-web')
           @if($data['inicio_inscricoes'] == null)
           Datas não definidas!
@@ -233,7 +229,6 @@
           @guest
           Ainda não é cadastrado? <a class="btn btn-link" href="{{ route('register') }}">Clique aqui </a>e cadastre-se!
           @endguest
-          @endif
           @endif
         </div>
       </div>
