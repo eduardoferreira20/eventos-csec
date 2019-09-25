@@ -13,8 +13,8 @@ class AddPosicaoCreateAdminsTable extends Migration
      */
     public function up()
     {
-        Schema::table('=admins', function (Blueprint $table) {
-            //
+        Schema::table('admins', function (Blueprint $table) {
+            $table->string('posicao')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddPosicaoCreateAdminsTable extends Migration
      */
     public function down()
     {
-        Schema::table('=admins', function (Blueprint $table) {
-            //
+        Schema::table('admins', function (Blueprint $table) {
+            $table->string('posicao')->nullable();
         });
     }
 }

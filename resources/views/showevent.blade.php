@@ -203,7 +203,14 @@
     <div id="inscricao" class="tab-pane fade in active">
       <div class="card">
         <div class="card-body">
-          
+          @auth('user-web')
+          @if(Auth::user()->posicao == '1' )
+          {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
+                {!! Form::hidden('info', 'inscricao_docente') !!}
+                {!! Form::submit('Inscrição Docente', ['class'=>'btn btn-link']) !!}
+                {!! Form::close() !!}
+          @endif
+          @endauth
           @auth('admin-web')
           @if($data['inicio_inscricoes'] == null)
           Datas não definidas!
@@ -222,9 +229,11 @@
           @endauth
           @else
           @auth('user-web')
+          @if(Auth::user()->posicao == null )
           {!! Form::open(array('route' => ['events.escolha', $data['id']],'method'=>'GET')) !!}
           {!! Form::submit('Inscrever-se', ['class'=>'btn btn-primary']) !!}
           {!! Form::close() !!}
+          @endif
           @endauth
           @guest
           Ainda não é cadastrado? <a class="btn btn-link" href="{{ route('register') }}">Clique aqui </a>e cadastre-se!
