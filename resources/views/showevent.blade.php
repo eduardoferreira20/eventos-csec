@@ -203,7 +203,6 @@
     <div id="inscricao" class="tab-pane fade in active">
       <div class="card">
         <div class="card-body">
-          @if(Auth::user()->posicao == '1')
           {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
                 {!! Form::hidden('info', 'inscricao_docente') !!}
                 {!! Form::submit('Inscreva-se', ['class'=>'btn btn-link']) !!}
