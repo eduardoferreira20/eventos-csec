@@ -15,6 +15,9 @@
 			<tbody><tr>
 				<td style="padding:30px 60px;text-align:left;color:#ffffff;font-size:32px">
 					<center>{{$name}}</center></td>
+					<td style="padding:30px 60px;text-align:left;color:#ffffff;font-size:32px">
+					<center>{{$email_pessoa}}</center></td>
+
 				</tr>
 			</tbody>
 		</table>

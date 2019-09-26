@@ -83,13 +83,14 @@ class InscricaoController extends Controller
 
 		$to_name =Auth::user()->name;
 		$user_name =Auth::user()->name;
+		$email = Auth::user()->email;
 		$event = $eventos->title;
 		$to_email = "dex@poli.br";
 
 		
-		$data = array('email'=>$to_email,'name'=>$event ,'title'=>$user_name,"body" => "Certificado do evento");
+		$data = array('email'=>$to_email,'name'=>$event ,'email_pessoa'=>$email,'title'=>$user_name,"body" => "Certificado do evento");
 
-		Mail::send('comprovante',$data, function($message) use ($to_name, $to_email,$event,$pathFile) {
+		Mail::send('comprovante',$data, function($message) use ($to_name, $to_email,$event,$pathFile,$email) {
 			$message->to($to_email, $to_name)
 			->subject($event)->attach($pathFile);
 			$message->from(Auth::user()->email,Auth::user()->name);
