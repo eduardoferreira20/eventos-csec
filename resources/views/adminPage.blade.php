@@ -14,14 +14,19 @@
 <table  class="table">
                 <thead>
                   <tr>
-                    <th scope=""></th>
+                    <th scope="">id</th>
+                    <th scope="">Nome</th>
+                    <th scope="">E-mail</th>
                   </tr>
                 </thead>
                 <tbody> 
-                 @foreach($evento as $evento)
+                 @foreach($user as $user)
             
                  <tr>
-                 <td scope=""><a href="{{route('admin.palestras',$evento->id)}}"><p style="margin-top: 3%; font-size:15px">{{$evento->title}}</p></a></td>
+                 <td scope="">{{$user->id}}</td>
+                 <td scope="">{{$user->nome}}</td>
+                 <td scope="">{{$user->email}}</td>
+                 <td><a href="{{route('admin.editar',$user->id)}}" class="breadcrumb">Editar</a></td>
                 </tr>
                 @endforeach
               </tbody>

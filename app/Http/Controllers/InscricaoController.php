@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Session;
 use App\Event;
 use DB;
 use Illuminate\Http\File;
@@ -88,12 +89,12 @@ class InscricaoController extends Controller
 		$to_email = "dex@poli.br";
 
 		
-		$data = array('email'=>$to_email,'name'=>$event ,'email_pessoa'=>$email,'title'=>$user_name,"body" => "Certificado do evento");
+		$data = array('email'=>$to_email,'name'=>$event ,'email_pessoa'=>$email,'title'=>$user_name,'email_send'=>$email,"body" => "Certificado do evento");
 
-		Mail::send('comprovante',$data, function($message) use ($to_name, $to_email,$event,$pathFile,$email) {
+		Mail::send('comprovante',$data, function($message) use ($to_name, $to_email,$event,$pathFile,$email,$user_name) {
 			$message->to($to_email, $to_name)
 			->subject($event)->attach($pathFile);
-			$message->from(Auth::user()->email,Auth::user()->name);
+			$message->from($email,$user_name);
 		});
 		Inscricao::create([
 				'user_id' => $user,
@@ -131,6 +132,7 @@ class InscricaoController extends Controller
 				'presenca' => false,
 				'envio' => false,
 			]);
+
 			return Redirect::to(route('events.show', ['id' => $id]));
 
 		}

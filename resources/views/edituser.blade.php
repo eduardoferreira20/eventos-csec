@@ -71,9 +71,11 @@ Editar dados
         {!! Form::label('nacionalidade','Nacionalidade: ') !!}
         {!! Form::text('nacionalidade', $old->nacionalidade, ['class' => 'form-control', 'style' => 'width:300px']) !!}
 
-        {!! Form::label('documento', 'Documento: ') !!}
+        {!! Form::label('documento', 'Tipo: ') !!}
 
-        {!! Form::select('tipo', ['1' => 'CPF', '2' => 'Passaporte'], $old->tipo, ['class' => 'form-control mb-3', 'style' => 'width:150px', 'onChange' => 'yesnoCheck(this)', 'placeholder' => 'Selecione']) !!}
+        {!! Form::select('tipo', ['1' => 'Discente', '2' => 'Docente'], $old->tipo, ['class' => 'form-control mb-3', 'style' => 'width:150px', 'onChange' => 'yesnoCheck(this)', 'placeholder' => 'Selecione']) !!} 
+
+        {!! Form::label('documento', 'Documento: ') !!}
 
         {!! Form::text('documento', $old->documento, ['class' => 'form-control', 'style' => 'width:300px', 'onkeypress' => 'return isNumberKey(event)', 'id' => 'documento']) !!}
 
