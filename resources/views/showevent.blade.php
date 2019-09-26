@@ -204,7 +204,7 @@
       <div class="card">
         <div class="card-body">
           @auth('user-web')
-          @if(Auth::user()->tipo == '1' )
+          @if(Auth::user()->tipo == '2' )
           {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
                 {!! Form::hidden('info', 'inscricao_docente') !!}
                 {!! Form::submit('Inscrição Docente', ['class'=>'btn btn-link']) !!}
@@ -229,7 +229,7 @@
           @endauth
           @else
           @auth('user-web')
-          @if(Auth::user()->tipo == null || Auth::user()->tipo == '2')
+          @if(Auth::user()->tipo == null || Auth::user()->tipo == '1')
           {!! Form::open(array('route' => ['events.escolha', $data['id']],'method'=>'GET')) !!}
           {!! Form::submit('Inscrever-se', ['class'=>'btn btn-primary']) !!}
           {!! Form::close() !!}
