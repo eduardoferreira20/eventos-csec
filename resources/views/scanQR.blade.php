@@ -41,6 +41,8 @@
     </div>
     <link rel="stylesheet" href="{{ asset('css/scan/style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/scan/app.css') }}">
-    <script type="text/javascript" src="{{ asset('js/app2.js') }}"></script> 
+    <script type="text/javascript" src="{{ secure_asset('js/app2.js') }}"></script> 
+    <script type="text/javascript" src="{{ secure_asset('js/index.js') }}"></script> 
+    <script type="text/javascript" src="{{ secure_asset('js/gulpfile.js') }}"></script> 
   </body>
 </html>
