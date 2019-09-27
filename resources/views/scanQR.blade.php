@@ -1,8 +1,9 @@
 <html>
   <head>
     <title>Scanner</title>
-    <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="{{secure_asset('css/scan/style.css') }}">
+    <link rel="stylesheet" href="{{secure_asset('css/scan/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
@@ -38,6 +39,8 @@
         <video id="preview"></video>
       </div>
     </div>
+    <link rel="stylesheet" href="{{ asset('css/scan/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/scan/app.css') }}">
     <script type="text/javascript" src="{{ asset('js/app2.js') }}"></script> 
   </body>
 </html>
