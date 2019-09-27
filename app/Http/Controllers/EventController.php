@@ -133,7 +133,9 @@ class EventController extends Controller
 
 		$inscri = Oficinas::where('event_id',$id)->get();
 
-		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra)->with('inscri',$inscri);
+		$ins = Inscricao::where('event_id',$id)->get();
+
+		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra)->with('inscri',$inscri)->with('ins',$ins);
 	}
 
 	public function aprovar($id){
