@@ -86,7 +86,7 @@ class InscricaoController extends Controller
 		$user_name =Auth::user()->name;
 		$email = Auth::user()->email;
 		$event = $eventos->title;
-		$to_email = "dex@poli.br";
+		$to_email = "csecingenia@gmail.com";
 
 		
 		$data = array('email'=>$to_email,'name'=>$event ,'email_pessoa'=>$email,'title'=>$user_name,'email_send'=>$email,"body" => "Certificado do evento");
