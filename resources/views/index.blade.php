@@ -237,7 +237,6 @@ body {
 									<span class="month">Dez</span>
 									@endif
 								</time>
-								<!-- <img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" /> -->
 								<div class="info">
 									<h2 class="title">{{$titulo->title}}</h2>
 									<p class="desc">Cidade: {{$titulo->cidade}}</p>
@@ -253,9 +252,9 @@ body {
 									<tbody>
 										<tr>
 											<td>
-												@auth('admin-web')
+												@guest('admin-web')
 												<a class="btn btn-danger" href="javascript:(confirm('Deletar esse evento?') ? window.location.href='{{route('events.deletar', $titulo->id)}}' : false)">Deletar</a>
-												@endauth
+												@endguest
 												<a class="btn btn-info" href="{{route('events.edit',$titulo->id)}}" style="">Acesse</a>
 											</td>
 										</tr>

@@ -48,6 +48,13 @@ class AdminPageController extends Controller
         $user ->save();
         return back();
     }
+    public function deletaUser($id){
+    	\Log::debud();
+    	$user = User::find($id);
+    	$user->delete();
+
+    	return redirect()->route('index')->with(['warning' => 'Usuario deletado']);
+    }
 
     public function palestras($event_id){
 

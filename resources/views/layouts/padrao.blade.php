@@ -134,9 +134,9 @@
 							<div class="d-flex">
 								{!! Form::submit('Entrar',['class'=>'btn btn-primary']) !!}
 								@if (Route::has('password.request'))
-								<!-- <a class="btn btn-link" href="{{ route('password.request') }}">
+								<a class="btn btn-link" href="{{ route('password.request') }}">
 									Esqueci minha senha
-								</a> -->
+								</a>
 								@endif
 							</div>
 							{!! Form::close() !!}

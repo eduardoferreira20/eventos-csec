@@ -58,10 +58,6 @@ Calendário de eventos
                 {!! Form::text('valor', null, ['class' => 'form-control','placeholder' => 'Ex.: 20,00']) !!}
                 </div>
             </div>
-            <div class="d-flex flex-fill">
-                <div class="d-flex mr-4">
-                    {!! Form::select('user_id', $users, null, ['placeholder' => 'Escolher usuário', 'class' => 'form-control']) !!}
-                </div>
                 </div>
             <div class="d-flex flex-column mb-4">
                 {!! Form::label('hora_comple','Horas complementares:') !!}

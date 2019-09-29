@@ -14,6 +14,8 @@ Route::get('/', 'EventController@index')->name('index');
 
 Route::get('admin/','AdminPageController@user')->name('admin');
 Route::get('admin/ediatar/{id}','AdminPageController@editar')->name('admin.editar');
+Route::get('admin/deletar/{$id}','AdminPageController@deletaUser')->name('admin.deleta');
+
 //mostra o calendário de eventos e adiciona eventos
 Route::get('eventos', 'EventController@calendario')->name('events.index');
 Route::post('eventos', 'EventController@adicionar')->name('events.add');
@@ -61,10 +63,5 @@ Auth::routes(['verify' => true]);
 Route::get('profile', function () {
     return '<h1>This is profile page</h1>';
 })->middleware('verified');
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

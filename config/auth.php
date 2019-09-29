@@ -38,12 +38,12 @@ return [
     'guards' => [
         'user-web' => [
             'driver' => 'session',
-            'provider' => 'user',
+            'provider' => 'user-web',
         ],
 
         'user-api' => [
             'driver' => 'token',
-            'provider' => 'user',
+            'provider' => 'user-web',
         ],
 
         'admin-web' => [
@@ -85,7 +85,7 @@ return [
     */
 
     'providers' => [
-        'user' => [
+        'user-web' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
@@ -118,7 +118,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'user-web',
             'table' => 'password_resets',
             'expire' => 60,
         ],
@@ -147,6 +147,6 @@ return [
 |
 */
 
-'model' => App\Models\User::class,
+'model' => App\User::class,
 
 ];
