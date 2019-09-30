@@ -15,9 +15,9 @@
                   </tr>
                 </thead>
                 <tbody> 
-                 <tr>
-                 <td scope="row"><center><p style="margin-top: 20%; font-size:30px"> Daniela Melo<p style="align-items: center;margin-bottom: 27%">{!!QrCode::size(170)->generate(129)!!}</p></p></center></td>
-                </tr>
+              <tr>
+                <td scope="row"><center><p style="margin-top: 20%; font-size:30px">Iabelle Lopes<p style="align-items: center;margin-bottom: 7%">{!!QrCode::size(170)->generate(198)!!}</p></p></center></td>
+              </tr>
               </tbody>
             </table>
             <div class="button-print">

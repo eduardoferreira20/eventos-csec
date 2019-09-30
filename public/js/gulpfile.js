@@ -9,13 +9,13 @@ var babelify = require('babelify');
 gulp.task('default', ['build', 'watch']);
 
 gulp.task('watch', function () {
-  gulp.watch('./src/*.js', ['build']);
+  gulp.watch('js/src/*.js', ['build']);
   gulp.watch('./*.js', ['build']);
 });
 
 function build(file) {
   return browserify(file, {
-      noParse: [require.resolve('.js/src/zxing')]
+      noParse: [require.resolve('js/src/zxing')]
     })
     .transform(babelify, {
       ignore: /zxing\.js$/i,
@@ -27,7 +27,7 @@ function build(file) {
 }
 
 gulp.task('release', function () {
-  return build('.js/export.js')
+  return build('js/export.js')
     .pipe(buffer())
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
@@ -35,6 +35,6 @@ gulp.task('release', function () {
 });
 
 gulp.task('build', function () {
-  return build('.js/export.js')
+  return build('js/export.js')
     .pipe(gulp.dest('./dist/'));
 });
