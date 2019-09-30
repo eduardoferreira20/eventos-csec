@@ -17,7 +17,7 @@
           <ul>
             <li v-if="cameras.length === 0" class="empty">Nenhuma câmera foi encontrada</li>
             <li v-for="camera in cameras">
-              <span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">@{{formatName(camera.name)}}</span>
+              <!-- <span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">@{{formatName(camera.name)}}</span> -->
               <span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active" v-text="formatName(camera.name)"></span>
               <span v-if="camera.id != activeCameraId" :title="formatName(camera.name)" v-text="formatName(camera.name)">
                 <a @click.stop="selectCamera(camera)" v-text="formatName(camera.name)"></a>
@@ -39,6 +39,8 @@
         <video id="preview"></video>
       </div>
     </div>
+    <link rel="stylesheet" href="{{ secure_asset('css/scan/style.css')}}">
+    <link rel="stylesheet" href="{{ secure_asset('css/scan/app.css') }}">
     <script type="text/javascript" src="{{ secure_asset('js/app2.js') }}"></script> 
     <script type="text/javascript" src="{{ secure_asset('js/index.js') }}"></script> 
     <script type="text/javascript" src="{{ secure_asset('js/gulpfile.js') }}"></script> 
