@@ -252,9 +252,9 @@ body {
 									<tbody>
 										<tr>
 											<td>
-												@guest('admin-web')
+												@auth('admin-web')
 												<a class="btn btn-danger" href="javascript:(confirm('Deletar esse evento?') ? window.location.href='{{route('events.deletar', $titulo->id)}}' : false)">Deletar</a>
-												@endguest
+												@endauth
 												<a class="btn btn-info" href="{{route('events.edit',$titulo->id)}}" style="">Acesse</a>
 											</td>
 										</tr>

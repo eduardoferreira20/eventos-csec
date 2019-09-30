@@ -7,14 +7,15 @@ var app = new Vue({
     scans: []
   },
   mounted: function () {
+    var id = content;
     var self = this;
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
 
       $.ajax({
         url:  'scanQR/' + content,
-        method: "POST",
-        data: content,
+        method: 'POST',
+        data: {content:id},
 
         success: function(result){
           alert('Alterado com sucesso!');
