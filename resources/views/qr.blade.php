@@ -16,7 +16,7 @@
                 </thead>
                 <tbody> 
                  <tr>
-                 <td scope="row"><center><p style="margin-top: 20%; font-size:30px">Alyx Silva<p style="align-items: center;margin-bottom: 27%">{!!QrCode::size(170)->generate(10)!!}</p></p></center></td>
+                 <td scope="row"><center><p style="margin-top: 20%; font-size:30px"> Daniela Melo<p style="align-items: center;margin-bottom: 27%">{!!QrCode::size(170)->generate(129)!!}</p></p></center></td>
                 </tr>
               </tbody>
             </table>
