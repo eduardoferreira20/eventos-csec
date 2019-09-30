@@ -26,6 +26,14 @@ class QRController extends Controller
 		return view('scanQR');
 	}
 
+	public function qr(){
+		return view('qr');
+	}
+
+	public function update(){
+
+	}
+
 	
 	public function up($user_id){
 		$presenca = Inscricao::where('user_id',$user_id)->first();

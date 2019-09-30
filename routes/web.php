@@ -54,7 +54,9 @@ Route::get('qr/lista/{event_id}','QRController@listaQR')->name('lista.qr');
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
 Route::get('scanQR/','QRController@leitor')->name('scanner');
-Route::post('scanQR/{user_id}','QRController@up')->name('scanner.up');
+Route::post('scanQR/dados','QRController@up')->name('scanner.up');
+
+Route::get('qr/download/','QRController@qr')->name('download.qr');
 
 Auth::routes();
 

@@ -12,7 +12,7 @@ var app = new Vue({
     self.scanner.addListener('scan', function (content, image) {
 
       $.ajax({
-        url:  'scanQR/' + content,
+        url:  '/scanQR/dados',
         method: "POST",
         data: content,
 
@@ -25,6 +25,7 @@ var app = new Vue({
           console.log(result);
         }
       });
+      
       self.scans.unshift({ date: +(Date.now()), content: content });
     });
     Instascan.Camera.getCameras().then(function (cameras) {
