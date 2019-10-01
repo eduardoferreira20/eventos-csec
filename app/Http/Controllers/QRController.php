@@ -32,14 +32,11 @@ class QRController extends Controller
 	}
 
 	public function uper(Request $r){
-		dd($r);
+		$ins = new Inscricao();
 		session(['data' =>$r->content]);
-
-		Oficinas::create([
-				'user_id' => $r,
-				'event_id' => '7',
-				'status' => true,
-			]);
+		$ins->user_id = $r->content;
+		$ins->event_id = '7';
+		$ins->status = true;
 	}
 	public function up($user_id){
 		$presenca = Inscricao::where('user_id',$user_id)->first();
