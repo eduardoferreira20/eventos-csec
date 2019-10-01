@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
     <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -21,4 +21,4 @@
     <script src="{{ asset('js/lib/jquery-3.3.1.js') }}"></script>
     <script src="{{ asset('js/lib/bootstrap.min.js') }}"></script>  
     @yield('script')
-</html>
+</html> -->

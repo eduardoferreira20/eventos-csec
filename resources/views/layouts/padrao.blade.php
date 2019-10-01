@@ -144,7 +144,7 @@
 						<div class="d-flex mt-3 mb-0">
 							<!-- <a class="btn btn-primary" href="{{ route('register') }}">
 								Não possui conta? Crie aqui!
-							</a> -->
+							</a>
 							<a class="btn btn-primary" href="https://www.xvideos.com/">
 								Não possui conta? Crie aqui!
 							</a>
@@ -232,4 +232,4 @@
 	width: '100%',
 	height: 700
 } );
-</style> -->
+</style> --> -->
