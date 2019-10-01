@@ -12,17 +12,12 @@ var app = new Vue({
     self.scanner.addListener('scan', function (content, image) {
       var data = {content:content};
       $.ajax("/scanQR/dados"{
-        
+
         content:content;
 
-        success: function(result){
+         function(data){
           alert('Alterado com sucesso!');
           console.log(result);
-        },
-        error: function(result){
-          console.log(content);
-          console.log(result);
-        }
       });
 
       self.scans.unshift({ date: +(Date.now()), content: content });
