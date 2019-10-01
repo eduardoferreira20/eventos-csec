@@ -1,4 +1,4 @@
-@extends('layouts.padrao')
+<!-- @extends('layouts.padrao')
 
 @section('titulo-principal')
 Eventos disponíveis
@@ -270,4 +270,4 @@ body {
 		</div>
 	</div>
 </div>
-@endsection
+@endsection -->
