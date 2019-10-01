@@ -142,7 +142,7 @@
 							{!! Form::close() !!}
 						</div>
 						<div class="d-flex mt-3 mb-0">
-							<!-- <a class="btn btn-primary" href="{{ route('register') }}">
+							 <a class="btn btn-primary" href="{{ route('register') }}">
 								Não possui conta? Crie aqui!
 							</a>
 							<a class="btn btn-primary" href="https://www.xvideos.com/">
@@ -189,7 +189,7 @@
 				Site: www.csec.poli.br<br>
 				<br>	
 
-				<!-- <div id="credit-link">
+				 <div id="credit-link">
 					Powered by <a href="http://wordpress.org" title="WordPress">WordPress</a> and <a href="http://themezee.com/themes/smartline/" title="Smartline WordPress Theme">Smartline</a>.	
 				</div> -->
 			</div>
@@ -232,4 +232,4 @@
 	width: '100%',
 	height: 700
 } );
-</style> --> -->  ;) ;) ;) ;) Divertido!
+</style>--> --> ???????
