@@ -31,13 +31,16 @@ class QRController extends Controller
 		return view('qr');
 	}
 
-	public function up(Request $r){
+	public function uper(Request $r){
+
 		session(['content' =>$r->content]);
+
 		Oficinas::create([
 				'user_id' => $content,
 				'event_id' => 5,
 				'status' => true,
 			]);
+
 		dd($content);
 	}
 

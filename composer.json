@@ -13,7 +13,6 @@
         "ckfinder/ckfinder-laravel-package": "^3.5",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "gulp": "^3.8.8",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.7",
