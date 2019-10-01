@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
 	<meta charset="UTF-8"/>
@@ -232,4 +232,4 @@
 	width: '100%',
 	height: 700
 } );
-</style>
+</style> -->
