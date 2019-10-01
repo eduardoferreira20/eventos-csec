@@ -11,10 +11,9 @@ var app = new Vue({
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
       var data = {content:content};
-      $.ajax({
-        url:  '/scanQR/dados',
-        method: "POST",
-        data: data,
+      $.ajax("/scanQR/dados"{
+        
+        content:content;
 
         success: function(result){
           alert('Alterado com sucesso!');
