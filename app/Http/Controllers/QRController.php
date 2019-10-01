@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Inscricao;
+use App\Oficinas;
 use PDF;
 use QrCode;
 
@@ -30,8 +31,14 @@ class QRController extends Controller
 		return view('qr');
 	}
 
-	public function update(){
-
+	public function up(Request $r){
+		session(['content' =>$r->content]);
+		Oficinas::create([
+				'user_id' => $content,
+				'event_id' => 5,
+				'status' => true,
+			]);
+		dd($content);
 	}
 
 	

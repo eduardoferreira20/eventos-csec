@@ -10,11 +10,11 @@ var app = new Vue({
     var self = this;
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
-
+      var data = {content:content};
       $.ajax({
         url:  '/scanQR/dados',
         method: "POST",
-        data: content,
+        data: data,
 
         success: function(result){
           alert('Alterado com sucesso!');
@@ -25,7 +25,7 @@ var app = new Vue({
           console.log(result);
         }
       });
-      
+
       self.scans.unshift({ date: +(Date.now()), content: content });
     });
     Instascan.Camera.getCameras().then(function (cameras) {
