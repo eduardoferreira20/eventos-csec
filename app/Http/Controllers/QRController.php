@@ -36,12 +36,12 @@ class QRController extends Controller
 		session(['content' =>$r->content]);
 
 		Oficinas::create([
-				'user_id' => $content,
+				'user_id' => $r,
 				'event_id' => 5,
 				'status' => true,
 			]);
 
-		dd($content);
+		dd($r);
 	}
 
 	
