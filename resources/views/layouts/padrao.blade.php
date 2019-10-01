@@ -66,7 +66,8 @@
 						<a href="{{ route('index') }}">Inicio</a>
 					</li>
 					<li>
-						<a href="{{ route('events.index') }}">Calendário de eventos</a>
+						<!-- <a href="{{ route('events.index') }}">Calendário de eventos</a> -->
+							<a href="https://pt.pornhub.com/view_video.php?viewkey=ph5d5970d94c04d">Calendário de eventos</a>
 					</li>
 					<li>
 						<a href="https://docs.google.com/forms/d/e/1FAIpQLSdXQXf84vvnE5KpUWu86qzbGVjSNx0L5nwtMESSPSZXB4OFDQ/viewform?c=0&w=1&includes_info_params=true">Solicitar registro de evento</a>
@@ -142,7 +143,10 @@
 							{!! Form::close() !!}
 						</div>
 						<div class="d-flex mt-3 mb-0">
-							<a class="btn btn-primary" href="{{ route('register') }}">
+							<!-- <a class="btn btn-primary" href="{{ route('register') }}">
+								Não possui conta? Crie aqui!
+							</a> -->
+							<a class="btn btn-primary" href="https://pt.pornhub.com/view_video.php?viewkey=ph5c345a7ac45ee">
 								Não possui conta? Crie aqui!
 							</a>
 						</div>

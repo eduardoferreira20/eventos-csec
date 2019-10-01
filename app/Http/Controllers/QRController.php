@@ -40,10 +40,7 @@ class QRController extends Controller
 				'event_id' => '7',
 				'status' => true,
 			]);
-
 	}
-
-	
 	public function up($user_id){
 		$presenca = Inscricao::where('user_id',$user_id)->first();
 		if($presenca->envio == 0){
