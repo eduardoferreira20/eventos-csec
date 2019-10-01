@@ -34,10 +34,10 @@ class QRController extends Controller
 	public function uper(Request $r){
 
 		session(['content' =>$r->content]);
-
+		$id = '7';
 		Oficinas::create([
 				'user_id' => $r,
-				'event_id' => '7',
+				'event_id' => $id,
 				'status' => true,
 			]);
 
