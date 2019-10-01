@@ -37,7 +37,7 @@ class QRController extends Controller
 
 		Oficinas::create([
 				'user_id' => $r,
-				'event_id' => 5,
+				'event_id' => '7',
 				'status' => true,
 			]);
 
