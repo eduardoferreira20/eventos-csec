@@ -12,9 +12,9 @@ var app = new Vue({
     self.scanner.addListener('scan', function (content, image) {
       var data = {content:content};
       $.ajax({
-        url:  '/scanQR/dados',
-        method: "get",
-        data: {data:content},
+        url:  'scanQR/dados',
+        method: "POST",
+        data: data,
 
         success: function(result){
           alert('Alterado com sucesso!');
