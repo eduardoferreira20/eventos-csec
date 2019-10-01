@@ -13,8 +13,8 @@ var app = new Vue({
       var data = {content:content};
       $.ajax({
         url:  '/scanQR/dados',
-        method: "POST",
-        data: data,
+        method: "get",
+        data: data:content,
 
         success: function(result){
           alert('Alterado com sucesso!');
