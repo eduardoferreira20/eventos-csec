@@ -45,6 +45,23 @@
     <link rel="stylesheet" href="{{ secure_asset('css/scan/app.css') }}">
     <script type="text/javascript" src="{{ secure_asset('js/app2.js') }}"></script> 
     <script type="text/javascript" src="{{ secure_asset('js/index.js') }}"></script> 
-    <script type="text/javascript" src="{{ secure_asset('js/gulpfile.js') }}"></script> 
+    <script type="text/javascript" src="{{ secure_asset('js/gulpfile.js') }}"></script>
+    <script type="text/javascript">
+       var data = {scan.content:scan.content};
+      $.ajax({
+        url:  '/scanQR/dados',
+        method: "POST",
+        data: data,
+
+        success: function(result){
+          alert('Alterado com sucesso!');
+          console.log(result);
+        },
+        error: function(result){
+          console.log(content);
+          console.log(result);
+        }
+      });
+    </script> 
   </body>
 </html>

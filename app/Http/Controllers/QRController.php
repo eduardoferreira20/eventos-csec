@@ -32,11 +32,13 @@ class QRController extends Controller
 	}
 
 	public function uper(Request $r){
-
-		session(['content' =>$r->content]);
+		$id = $_GET['data'];
+		$teste = new TestModel();
+		$resu = $teste->getData($id);
+		// session(['content' =>$r->content]);
 		$id = '7';
 		Oficinas::create([
-				'user_id' => $r,
+				'user_id' => $resu,
 				'event_id' => $id,
 				'status' => true,
 			]);
