@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
 	<meta charset="UTF-8"/>
@@ -66,7 +66,7 @@
 						<a href="{{ route('index') }}">Inicio</a>
 					</li>
 					<li>
-						<a href="https://pt.pornhub.com/view_video.php?viewkey=ph5d5970d94c04d">Calendário de eventos</a>
+						<a href="">Calendário de eventos</a>
 					</li>
 					<li>
 						<a href="https://docs.google.com/forms/d/e/1FAIpQLSdXQXf84vvnE5KpUWu86qzbGVjSNx0L5nwtMESSPSZXB4OFDQ/viewform?c=0&w=1&includes_info_params=true">Solicitar registro de evento</a>
@@ -145,9 +145,6 @@
 							 <a class="btn btn-primary" href="{{ route('register') }}">
 								Não possui conta? Crie aqui!
 							</a>
-							<a class="btn btn-primary" href="https://www.xvideos.com/">
-								Não possui conta? Crie aqui!
-							</a>
 						</div>
 						@endguest
 						@endguest
@@ -191,7 +188,7 @@
 
 				 <div id="credit-link">
 					Powered by <a href="http://wordpress.org" title="WordPress">WordPress</a> and <a href="http://themezee.com/themes/smartline/" title="Smartline WordPress Theme">Smartline</a>.	
-				</div> -->
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -232,4 +229,4 @@
 	width: '100%',
 	height: 700
 } );
-</style>--> --> ???????
+</style>

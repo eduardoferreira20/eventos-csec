@@ -1,4 +1,4 @@
-<!-- @extends('layouts.padrao')
+@extends('layouts.padrao')
 
 @section('titulo-principal')
 Eventos disponíveis
@@ -255,8 +255,7 @@ body {
 												@auth('admin-web')
 												<a class="btn btn-danger" href="javascript:(confirm('Deletar esse evento?') ? window.location.href='{{route('events.deletar', $titulo->id)}}' : false)">Deletar</a>
 												@endauth
-												<!-- <a class="btn btn-info" href="{{route('events.edit',$titulo->id)}}" style="">Acesse</a> -->
-												<!-- <a class="btn btn-info" href="https://pt.pornhub.com/view_video.php?viewkey=ph5c345a7ac45ee" style="">Acesse</a>
+												<a class="btn btn-info" href="{{route('events.edit',$titulo->id)}}" style="">Acesse</a>
 											</td>
 										</tr>
 									</tbody>
@@ -270,4 +269,4 @@ body {
 		</div>
 	</div>
 </div>
-@endsection --> -->
+@endsection

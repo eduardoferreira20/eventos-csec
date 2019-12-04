@@ -29,6 +29,11 @@
     padding-left: 47%;
     width: 49%;
   }
+  .table1{
+    padding-top: 0.2%;
+    padding-left: 47%;
+    width: 49%;
+  }
 
   .data{
     padding-top: 24.5%;
@@ -39,7 +44,6 @@
     line-height: 150%; 
     text-align: justify;
   }
-
 
 </style>
   </head>
@@ -75,9 +79,31 @@
             <p>{!!$user->evento->cidade!!}, {{ date('d', strtotime($user->evento->start_date)) }} de Dezembro de {{ date('Y', strtotime($user->evento->start_date)) }}</p>
             @endif
           </div>
-          <div class="table">
-            <p>Certificamos que <strong>{{$user->user->name}}</strong>, portador do documento <strong>{{$user->user->documento}}</strong>, participou com êxito do evento <strong>{{$evento->title}}</strong>  realizado na <strong>{{$evento->local}}</strong> na cidade de <strong>{{$evento->cidade}}</strong>, contabilizando carga horária total de <strong>{{$evento->hora_comple}}</strong> horas.</p>
+          <!-- <div class="table">
+            <p>Certificamos que <strong>Mônica Crystine da Silva Bezerra</strong>, portador do documento <strong>120.036.784-76
+            </strong>, participou com êxito do evento <strong>As alterações nas NRs e novas perspectivas</strong> realizado na <strong>POLI</strong> na cidade de <strong>Recife</strong>, contabilizando carga horária total de <strong>4</strong> horas.</p>
+          </div> -->
+          <!-- <div class="table1">
+              <p>Confere o presente certificado a <strong>Prof.ª Dr.ª Eliane Maria Gorga Lago</strong>, pela organização da <strong>X Jornada de Segurança do Trabalho</strong>, evento integrante do <strong>Ingenia - Semana Universitária</strong> da <strong>POLI</strong> realizado no dia<strong> 01 de Outubro de 2019</strong>, no auditório da <strong>Escola Politécnica de Pernambuco.</p>
+          </div> -->
+         <!--  <div class="table1">
+              <p>Certificamos para os devidos fins que o trabalho intitulado <strong>Avaliação de solicitações de assistência técnica de um empreendimento residencial Minha Casa, Minha Vida para melhoria da qualidade do serviço</strong>, de autoria de <strong>Maria de Lara Peixoto da Silva</strong>, foi apresentado na <strong>INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco</strong> realizado no dia<strong> 03 de Outubro de 2019</strong>, na <strong>Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019. {{$total}}</p>
+          </div> -->
+          <!-- <div class="table1">
+              <p>Certificamos para os devidos fins que <strong>Bruno de Holanda Cavalcanti Filho</strong>, participou do <strong>INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco</strong> realizado no dia<strong> 03 de Outubro de 2019</strong>, na <strong>Escola Politécnica de Pernambuco - POLI/UPE 2019.</p>
+          </div> -->
+         <!--  <div class="table1">
+              <p>Confere o presente certificado a <strong>Lidiane de Souza Monteiro</strong>, portador do documento <strong>077.462.984-35</strong>, participou do evento <strong>Semana de Engenharia da Computação/Semana Universitária</strong> realizada na <strong>POLI</strong> onde ministrou a palestra: <strong> Não deixe a tecnologia atrapalhar a fase da sua carreira </strong>, contabilizando carga horária total de <strong> 1 hora </strong>.</p>
+          </div> -->
+          <div class="table1">
+              <p>Certificamos para os devidos fins que <strong>Rejane Bizerra da Silva Azidio</strong>, participou do <strong>Comitê Avaliador </strong>avaliando os trabalhos submetidos e apresentados na <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
           </div>
+          <!-- <div class="table1">
+              <p>Certificamos para os devidos fins que <strong>Prof.ª Dr.ª Bianca M. Vasconcelos</strong>, participou da <strong>Comitê Avaliador</strong> do <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
+          </div> -->
+          <!-- <div class="table1">
+              <p>Certificamos para os devidos fins que <strong>Prof. Dr.ª Jurany Freitas Melro Travassos</strong>, participou da <strong>Comissão Científica</strong> avaliando os trabalhos submetidos e apresentados na <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
+          </div> -->
         </div>
       </div>
      </div> 

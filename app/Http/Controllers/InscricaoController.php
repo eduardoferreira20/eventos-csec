@@ -115,9 +115,10 @@ class InscricaoController extends Controller
 			Oficinas::create([
 				'user_id' => $user,
 				'event_id' => $id,
+				'palestras_id' => 1,
 				'status' => false,
 			]);
-			return Redirect::to(route('events.show', ['id' => $id]));
+			return Redirect::to(route('events.show', ['id' => $id]))->withErrors(['Inscrito com Sucesso!', 'The Message']);
 
 		
 	}elseif($request['info'] == 'inscricao_docente'){

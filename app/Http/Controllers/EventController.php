@@ -91,6 +91,8 @@ class EventController extends Controller
 		$user = DB::table('users')
 		->where('id', $event->user_id)->first();
 
+		$ofi = Oficinas::get();
+
 		$event = array(
 			'id'	=> $event->id,
 			'title' => $event->title,
@@ -135,7 +137,9 @@ class EventController extends Controller
 
 		$ins = Inscricao::where('event_id',$id)->get();
 
-		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra)->with('inscri',$inscri)->with('ins',$ins);
+		$contagem = Oficinas::where('event_id',$id)->where('id',1)->count();
+
+		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra)->with('inscri',$inscri)->with('ins',$ins)->with('contagem',$contagem);
 	}
 
 	public function aprovar($id){
@@ -512,14 +516,10 @@ class EventController extends Controller
 			Palestras::create([
 				'event_id' => $id,
 				'titulo' => $request['titulo'],
-				'palestrante' => $request['palestrante'],
-				'start_date' => $request['start_date'],
-				'end_date' => $request['end_date'],
 				'inicio_inscricoes' =>$request['inicio_inscricoes'],
 				'fim_inscricoes' =>$request['fim_inscricoes'],
-				'local'=> $request['local'],
 				'apresentacao' => $request['input'],
-				'presenca' => false,
+				'horas' => $request['horas'],
 			
 			]);
 

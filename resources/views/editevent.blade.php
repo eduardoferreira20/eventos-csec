@@ -130,11 +130,6 @@ Adicionar minicurso
       {!! Form::label('end_time','Horário final:') !!}
       {!! Form::text('end_time', $old['end_time'], ['class' => 'form-control', 'placeholder' => '--:--']) !!}
     </div>
-    <!-- <div class="d-flex flex-fill">
-    <div class="d-flex mr-4">
-      {!! Form::select('user_id', $users, null, ['placeholder' => 'Escolher usuário', 'class' => 'form-control']) !!}
-    </div>
-  </div> -->
   </div>
   <div class="mt-4">
     <a href="{{ route('events.show', ['id' => $id]) }}" class="btn btn-primary mr-3">
@@ -150,18 +145,12 @@ Adicionar minicurso
   {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST', 'files' => true)) !!}
   {!! Form::label('titulo','Nome da palestra:') !!}
   {!! Form::text('titulo', $old->titulo, ['class' => 'form-control mb-4']) !!}
-  <!-- {!! Form::label('palestrante','Nome do palestrante:') !!}
-  {!! Form::text('palestrante', $old->palestrante, ['class' => 'form-control mb-4']) !!}
-  {!! Form::label('local','Local:') !!}
-  {!! Form::text('local', $old->local, ['class' => 'form-control mb-4']) !!} -->
-  <div class="d-flex flex-column mr-4">
-    {!! Form::label('start_date','Data de início:') !!}
-    {!! Form::date('start_date', $old->start_date, ['class' => 'form-control']) !!}
-  </div>
-  <div class="d-flex flex-column mr-4">
-    {!! Form::label('end_date','Data de fim:') !!}
-    {!! Form::date('end_date', $old->start_date, ['class' => 'form-control']) !!}
-  </div>
+</div>
+<div class="d-flex flex-column mr-4">
+  {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST')) !!}
+  {!! Form::label('horas','Horas Ofertada:') !!}
+  {!! Form::text('horas', $old->horas, ['class' => 'form-control mb-4']) !!}
+</div>
   <div class="d-flex flex-column">
     {!! Form::label('input','Apresentação:') !!}
     {!! Form::textarea('input', $old->apresentacao, ['id' => 'editor1']) !!} 
@@ -238,14 +227,12 @@ Adicionar minicurso
     {!! Form::text('palestrante', null, ['class' => 'form-control mb-4']) !!} -->
   <!-- {!! Form::label('local','Local:') !!}
     {!! Form::text('local', null, ['class' => 'form-control mb-4']) !!} -->
-    <div class="d-flex flex-column mr-4 clockpicker">
-      {!! Form::label('start_date','Início das inscrições:') !!}
-      {!! Form::date('start_date', null, ['class' => 'form-control']) !!}
-    </div>
-    <div class="d-flex flex-column mr-4 clockpicker">
-      {!! Form::label('end_date','Fim das inscrições:') !!}
-      {!! Form::date('end_date', null, ['class' => 'form-control']) !!}
-    </div>
+  </div>
+  <div class="d-flex flex-column">
+  {!! Form::open(array('route' => ['events.edit', $id],'method'=>'POST')) !!}
+  {!! Form::label('horas','Horas ofertadas:') !!}
+  {!! Form::text('horas', null, ['class' => 'form-control mb-4']) !!}
+</div>
     <div class="d-flex flex-column">
       {!! Form::label('input','Descrição da palestra:') !!}
       {!! Form::textarea('input', null, ['id' => 'editor1']) !!} 

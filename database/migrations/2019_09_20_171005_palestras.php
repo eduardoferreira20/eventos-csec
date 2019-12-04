@@ -20,14 +20,10 @@ class Palestras extends Migration
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
 
             $table->string('titulo')->nullable();
-            $table->string('palestrante')->nullable();
-            $table->datetime('start_date');
-            $table->datetime('end_date');
             $table->date('inicio_inscricoes')->nullable();
             $table->date('fim_inscricoes')->nullable();
-            $table->string('local')->nullable();
             $table->text('apresentacao')->nullable();
-            $table->boolean('presenca')->nullable();
+            $table->integer('horas')->nullable();
             
             $table->timestamps();
         });

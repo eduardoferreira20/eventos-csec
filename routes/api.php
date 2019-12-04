@@ -20,11 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('scanQR/dados',function(Request $re){
-	
+
 		session(['data' =>$r->content]);
 		$ins = new Inscricao();
 		$ins->user_id = $r->content;
 		$ins->event_id = '7';
 		$ins->status = true;
-
+		$ins->save();
+		return $re;
 });
