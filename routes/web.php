@@ -38,6 +38,7 @@ Route::get('boleto/','BoletoController@boleto')->name('boleto');
 //escolha da forma de pagamento do evento
 Route::get('eventos/{id}/escolha','EventController@escolha')->name('events.escolha');
 Route::post('eventos/{id}/inscricoes', 'InscricaoController@inscricoes')->name('events.inscricoes');
+Route::post('eventos/{id}/palestra/{palestra_id}', 'InscricaoController@palestra')->name('events.palestras');
 
 Route::get('users/{id}', 'UserController@index')->name('user.index');
 Route::post('users/{id}', 'UserController@edit')->name('user.edit');
@@ -53,8 +54,14 @@ Route::get('qr/lista/{event_id}','QRController@listaQR')->name('lista.qr');
 
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 
+Route::get('lista/','EventController@listaGeral')->name('listando');
+Route::get('lista/{id}/eventos','EventController@eventos')->name('listando.eventos');
+Route::get('scan/{id}/eventos/{palestra_id}','QRController@ler')->name('scan.palestra');
+
 Route::get('scanQR/','QRController@leitor')->name('scanner');
 Route::post('scanQR/dados','QRController@uper')->name('scanner.up');
+Route::post('scan/dados','QRController@mudar')->name('scanner.dados');
+
 
 Route::get('qr/download/','QRController@qr')->name('download.qr');
 

@@ -23,6 +23,31 @@ class QRController extends Controller
 		return view('excel',compact('i'));
 	}
 
+	public function ler(){
+		return view('ScanJS');
+	}
+
+	//altera pela camera o status da inscrição
+	public function mudar(Request $r){
+		
+		$user = $r->user_id;
+
+		$palestra_id =1;
+
+
+		$splitUser = explode('.',$user,2);
+
+		$user_id = $splitUser[0];
+
+		$event_id = $splitUser[1];
+		$inscri = Oficinas::where('user_id',$user_id)->where('palestra_id',$palestra_id)->where('event_id',$event_id)->first();
+
+		$inscri->update(['status' => '1']);
+
+		return view('qr',compact('inscri'));
+
+	}
+
 	public function leitor(){
 		return view('scanQR');
 	}

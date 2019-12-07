@@ -13,7 +13,7 @@ class Palestras extends Migration
      */
     public function up()
     {
-        Schema::create('palestras', function (Blueprint $table) {
+        Schema::create('palestras1', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('event_id')->unsigned();

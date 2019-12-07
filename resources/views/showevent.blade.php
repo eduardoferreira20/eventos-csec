@@ -151,7 +151,7 @@
           {!! $palestra->apresentacao !!}
 
           @if(Auth::user())
-          {!! Form::open(array('route' => ['events.inscricoes', $data['id']],'method'=>'POST')) !!}
+          {!! Form::open(array('route' => ['events.palestras', $data['id'],$palestra->id],'method'=>'POST')) !!}
           {!! Form::hidden('info', 'inscricao_palestra') !!}
           {!! Form::submit('Inscreva-se', ['class'=>'btn btn-link']) !!}
           {!! Form::close() !!}

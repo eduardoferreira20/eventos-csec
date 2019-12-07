@@ -14,7 +14,7 @@ class CreateOficinasTable extends Migration
     public function up()
     {
         Schema::create('oficinas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -22,8 +22,8 @@ class CreateOficinasTable extends Migration
             $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
 
-            $table->integer('palestras_id')->unsigned();
-            $table->foreign('palestras_id')->references('id')->on('palestra')->onDelete('cascade');
+            $table->integer('palestra_id')->unsigned();
+            $table->foreign('palestra_id')->references('id')->on('palestra')->onDelete('cascade');
 
             $table->boolean('status');
 

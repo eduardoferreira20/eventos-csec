@@ -80,8 +80,8 @@
             @endif
           </div>
           <!-- <div class="table">
-            <p>Certificamos que <strong>Mônica Crystine da Silva Bezerra</strong>, portador do documento <strong>120.036.784-76
-            </strong>, participou com êxito do evento <strong>As alterações nas NRs e novas perspectivas</strong> realizado na <strong>POLI</strong> na cidade de <strong>Recife</strong>, contabilizando carga horária total de <strong>4</strong> horas.</p>
+            <p>Certificamos que <strong>Arnaldo Nogueira Paraguassú</strong>, portador do documento <strong>061.037.364-12
+            </strong>, participou com êxito do evento <strong>Apresentação Equipe Carranca na Semana Univesitária 2019</strong> realizado na <strong>POLI</strong> na cidade de <strong>Recife</strong>, contabilizando carga horária total de <strong>1</strong> hora.</p>
           </div> -->
           <!-- <div class="table1">
               <p>Confere o presente certificado a <strong>Prof.ª Dr.ª Eliane Maria Gorga Lago</strong>, pela organização da <strong>X Jornada de Segurança do Trabalho</strong>, evento integrante do <strong>Ingenia - Semana Universitária</strong> da <strong>POLI</strong> realizado no dia<strong> 01 de Outubro de 2019</strong>, no auditório da <strong>Escola Politécnica de Pernambuco.</p>
@@ -95,15 +95,22 @@
          <!--  <div class="table1">
               <p>Confere o presente certificado a <strong>Lidiane de Souza Monteiro</strong>, portador do documento <strong>077.462.984-35</strong>, participou do evento <strong>Semana de Engenharia da Computação/Semana Universitária</strong> realizada na <strong>POLI</strong> onde ministrou a palestra: <strong> Não deixe a tecnologia atrapalhar a fase da sua carreira </strong>, contabilizando carga horária total de <strong> 1 hora </strong>.</p>
           </div> -->
-          <div class="table1">
+          <!-- <div class="table1">
               <p>Certificamos para os devidos fins que <strong>Rejane Bizerra da Silva Azidio</strong>, participou do <strong>Comitê Avaliador </strong>avaliando os trabalhos submetidos e apresentados na <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
-          </div>
-          <!-- <div class="table1">
-              <p>Certificamos para os devidos fins que <strong>Prof.ª Dr.ª Bianca M. Vasconcelos</strong>, participou da <strong>Comitê Avaliador</strong> do <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
           </div> -->
           <!-- <div class="table1">
-              <p>Certificamos para os devidos fins que <strong>Prof. Dr.ª Jurany Freitas Melro Travassos</strong>, participou da <strong>Comissão Científica</strong> avaliando os trabalhos submetidos e apresentados na <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
+              <p>Certificamos para os devidos fins que <strong>Prof. Msc. Wilson Sotero Dália da Silva</strong>, participou da <strong>Comitê Avaliador</strong> do <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
           </div> -->
+           <!-- <div class="table1">
+              <p>Certificamos para os devidos fins que <strong>Prof. Msc. Wilson Sotero Dália da Silva</strong>, avaliou o resumo <strong>Desenvolvimento de um ambiente de geração de mensagens construtivas a partir de modelos de mineração de dados educacionais</strong> na <strong>Mostra de Extensão, Inovação e Pesquisa 2019,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
+          </div> -->
+          <!-- div class="table1">
+              <p>Certificamos para os devidos fins que <strong>Prof. Msc. Wilson Sotero Dália da Silva</strong>, participou da <strong>Comissão Científica</strong> avaliando os trabalhos submetidos e apresentados na <strong>Mostra de Extensão, Inovação e Pesquisa,</strong> evento integrante do<strong> INGENIA, Semana Universitária</strong> da <strong>Universidade de Pernambuco na Escola Politécnica de Pernambuco - MOSTRA POLI/UPE 2019.</p>
+          </div> -->
+
+          <div class="table1">
+          <p>Certificamos que <strong>{{$user->user->name}}</strong>, portador do documento <strong>{{$user->user->documento}}</strong>, participou com êxito do evento <strong>{{$evento->title}}</strong>  realizado na <strong>{{$evento->local}}</strong> na cidade de <strong>{{$evento->cidade}}</strong>, contabilizando carga horária total de <strong>{{$total}}</strong> horas.</p>
+        </div>
         </div>
       </div>
      </div> 

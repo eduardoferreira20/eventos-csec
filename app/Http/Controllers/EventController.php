@@ -119,7 +119,7 @@ class EventController extends Controller
 		->where('event_id', $id)
 		->get();
 
-		$palestras = DB::table('palestras')->where('event_id',$id)->get();	
+		$palestras = DB::table('palestras1')->where('event_id',$id)->get();	
 
 		$oficinas = DB::table('oficinas')->where('event_id',$id)->get();
 
@@ -140,6 +140,16 @@ class EventController extends Controller
 		$contagem = Oficinas::where('event_id',$id)->where('id',1)->count();
 
 		return view('showevent',compact('hora'))->with('data', $event)->with('info', $user)->with('palestrantes', $nome_palestrantes)->with('palestras', $palestras)->with('oficinas',$oficinas)->with('inscricaos', $inscricaos)->with('presenca',$presenca)->with('certificado',$certificado)->with('palestra',$palestra)->with('inscri',$inscri)->with('ins',$ins)->with('contagem',$contagem);
+	}
+
+	public function listaGeral(){
+		$geral = DB::table('events')->get();
+		return view('listaScan',compact('geral'));
+	}
+
+	public function eventos($id){
+		$palestra = Palestras::where('event_id',$id)->get();
+		return view('listaPalestra')->with('palestra',$palestra)->with('id',$id);
 	}
 
 	public function aprovar($id){
@@ -230,7 +240,7 @@ class EventController extends Controller
 			->with('id', $id);	
 
 		}elseif($request['info'] == 'palestras'){
-			$check = DB::table('palestras')
+			$check = DB::table('palestra')
 			->where('event_id', $id)
 			->where('id', $request['old'])
 			->first();
@@ -335,22 +345,22 @@ class EventController extends Controller
 			$end = date('Y-m-d H:i:s', strtotime("$ed $et"));
 
 
-			DB::table('palestras')
+			DB::table('palestra')
 			->where('event_id', $id)
 			->where('id', $request['id'])
 			->update(['titulo' => $request['titulo']]);
 
-			// DB::table('palestras')
-			// ->where('event_id', $id)
-			// ->where('id', $request['id'])
-			// ->update(['palestrante' => $request['palestrante']]);
+			DB::table('palestra')
+			->where('event_id', $id)
+			->where('id', $request['id'])
+			->update(['horas' => $request['horas']]);
 
 			// DB::table('palestras')
 			// ->where('event_id', $id)
 			// ->where('id', $request['id'])
 			// ->update(['local' => $request['local']]);
 
-			DB::table('palestras')
+			DB::table('palestra')
 			->where('event_id', $id)
 			->where('id', $request['id'])
 			->update(['apresentacao' => $request['input']]);

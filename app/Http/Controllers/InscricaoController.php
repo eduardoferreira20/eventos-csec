@@ -82,21 +82,21 @@ class InscricaoController extends Controller
 
 			$eventos = Event::where('id',$id)->first();
 
-		$to_name =Auth::user()->name;
-		$user_name =Auth::user()->name;
-		$email = Auth::user()->email;
-		$event = $eventos->title;
-		$to_email = "csecingenia@gmail.com";
+			$to_name =Auth::user()->name;
+			$user_name =Auth::user()->name;
+			$email = Auth::user()->email;
+			$event = $eventos->title;
+			$to_email = "csecingenia@gmail.com";
 
-		
-		$data = array('email'=>$to_email,'name'=>$event ,'email_pessoa'=>$email,'title'=>$user_name,'email_send'=>$email,"body" => "Certificado do evento");
+			
+			$data = array('email'=>$to_email,'name'=>$event ,'email_pessoa'=>$email,'title'=>$user_name,'email_send'=>$email,"body" => "Certificado do evento");
 
-		Mail::send('comprovante',$data, function($message) use ($to_name, $to_email,$event,$pathFile,$email,$user_name) {
-			$message->to($to_email, $to_name)
-			->subject($event)->attach($pathFile);
-			$message->from($email,$user_name);
-		});
-		Inscricao::create([
+			Mail::send('comprovante',$data, function($message) use ($to_name, $to_email,$event,$pathFile,$email,$user_name) {
+				$message->to($to_email, $to_name)
+				->subject($event)->attach($pathFile);
+				$message->from($email,$user_name);
+			});
+			Inscricao::create([
 				'user_id' => $user,
 				'event_id' => $id,
 				'status'=> false,
@@ -115,13 +115,13 @@ class InscricaoController extends Controller
 			Oficinas::create([
 				'user_id' => $user,
 				'event_id' => $id,
-				'palestras_id' => 1,
+				'palestra_id' => "1",
 				'status' => false,
 			]);
 			return Redirect::to(route('events.show', ['id' => $id]))->withErrors(['Inscrito com Sucesso!', 'The Message']);
 
-		
-	}elseif($request['info'] == 'inscricao_docente'){
+			
+		}elseif($request['info'] == 'inscricao_docente'){
 
 			$user = Auth::user()->id;
 
@@ -137,6 +137,20 @@ class InscricaoController extends Controller
 			return Redirect::to(route('events.show', ['id' => $id]));
 
 		}
+	}
+
+	public function palestra($id,Request $re,$palestra_id){
+		if($re['info'] == 'inscricao_palestra')
+
+			$user = Auth::user()->id;
+
+		Oficinas::create([
+			'user_id' => $user,
+			'event_id' => $id,
+			'palestra_id' => $palestra_id,
+			'status' => false,
+		]);
+		return Redirect::to(route('events.show', ['id' => $id]))->withErrors(['Inscrito com Sucesso!', 'The Message']);
 	}
 
 	public function pagamento(){

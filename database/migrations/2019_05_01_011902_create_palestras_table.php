@@ -16,12 +16,10 @@ class CreatePalestrasTable extends Migration
         Schema::create('palestra', function (Blueprint $table) {
             $table->increments('id');
 
-           $table->integer('event_id')->unsigned();
+            $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
 
             $table->string('titulo')->nullable();
-            $table->date('inicio_inscricoes')->nullable();
-            $table->date('fim_inscricoes')->nullable();
             $table->text('apresentacao')->nullable();
             $table->integer('horas')->nullable();
 

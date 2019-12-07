@@ -24,9 +24,10 @@
 			<tbody><tr>
 				<td>
 					<h1 style="font-size:19px;font-weight:bold">
-						{{$email_send}},
-						{{$title}}
-
+						E-mail: {{$email_send}}
+					</h1>
+					<h1 style="font-size:19px;font-weight:bold">
+						Nome:{{$title}}
 					</h1>
 				</td>
 			</tr>
